@@ -1,0 +1,38 @@
+.card-fav {
+   width: 150px;
+   height: 150px;
+   display: inline-flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   vertical-align: middle;
+   margin: 10px;
+   position: relative;
+   top: 0;
+   transition: .20s top ease-out;
+   &:hover {
+      top: -10px;
+   }
+   i.icon {
+      font-size: 4.5rem;
+      color: #B7B7B7;
+      margin-bottom: 8px;
+   }
+   p {
+      color: #726767;
+      font-size: 16px;
+   }
+   @media only screen and (max-width: 600px) {
+      width: 125px;
+      height: 125px;
+      i.icon {
+         font-size: 3.5rem;
+         color: #B7B7B7;
+         margin-bottom: 3px;
+      }
+      p {
+         color: #726767;
+         font-size: 14px;
+      }
+   }
+}

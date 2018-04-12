@@ -1,0 +1,6 @@
+{
+   "rules": {
+      "react/jsx-max-props-per-line": [10, { "maximum": 10 }],
+      "array-element-newline": false
+   }
+}

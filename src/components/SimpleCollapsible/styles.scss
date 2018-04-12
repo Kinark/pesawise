@@ -1,0 +1,45 @@
+.simple-collapsible {
+   margin-bottom: 1em;
+   p.cola-title {
+      margin-bottom: 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: capitalize;
+      user-select: none;
+      &::before {
+         content: "▶";
+         display: inline-block;
+         margin-right: 5px;
+         font-size: 8px;
+         vertical-align: top;
+         transform: rotate(0deg);
+         transition: .25s transform;
+         user-select: none;
+      }
+      &.active::before {
+         transform: rotate(90deg);
+      }
+   }
+
+   .cola-body {
+      max-height: 500px;
+      transition: .25s max-height;
+      overflow-x: hidden;
+      &>div {
+         position: relative;
+         top: 0;
+         opacity: 1;
+         transition: .25s all;
+         transition-delay: 0.075s;
+      }
+      &.hidden {
+         overflow: hidden;
+         max-height: 0;
+         &>div {
+            top: -50px;
+            opacity: 0;
+         }
+      }
+   }
+}

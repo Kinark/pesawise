@@ -1,0 +1,13 @@
+.item {
+   margin-left: 0;
+   transition: .25s margin-left;
+   &.active {
+      margin-left: 7px;
+      i.icon {
+         color: #2185D0;
+      }
+   }
+   i.icon {
+      color: #454545;
+   }
+}

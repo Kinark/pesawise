@@ -1,0 +1,45 @@
+.card-category {
+   width: 150px;
+   height: 150px;
+   text-align: center;
+   display: inline-block;
+   margin: 10px;
+   position: relative;
+   top: 0;
+   transition: .20s top ease-out;
+   &:hover {
+      top: -10px;
+   }
+   i {
+      font-size: 4.5rem;
+      color: #B7B7B7;
+      margin-bottom: 8px;
+   }
+   p {
+      color: #726767;
+      font-size: 19px;
+   }
+   .separator {
+      height: 5px;
+      width: 5px;
+      background-color: #707070;
+      margin: 5px auto;
+      border-radius: 50%;
+      position: relative;
+      &::before,
+      &::after {
+         position: absolute;
+         content: "";
+         height: 5px;
+         width: 5px;
+         background-color: #707070;
+         border-radius: 50%;
+      }
+      &::before {
+         left: 10px;
+      }
+      &::after {
+         right: 10px;
+      }
+   }
+}
