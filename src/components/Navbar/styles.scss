@@ -24,17 +24,14 @@ div.ui.uhu {
 
 
 .bg-header-side {
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
    height: 110px;
-   width: 100%;
    background-image: url('./images/header2x.jpg');
    background-position: -910px -140px;
    background-repeat: no-repeat;
    background-size: 1670px;
    pointer-events: none;
+   padding: 1.3em 0.8em 0.8em;
+   margin: -1.3em -0.8em 3px;
 }
 
 /* Position and sizing of burger button */
@@ -70,7 +67,7 @@ div.ui.uhu {
 
 .bm-menu {
    // background: #373a47;
-   background: #fafafa; 
+   background: #fafafa;
    padding: 0.5em 0 0;
    font-size: 1.15em;
 }
@@ -89,8 +86,7 @@ div.ui.uhu {
    .simple-collapsible {
       margin: 0 -0.8em;
       padding: 1em 2.8em;
-      border-bottom: solid 1px #eee;
-      // &:hover {
+      border-bottom: solid 1px #eee; // &:hover {
       //    background-color: rgba(0,0,0,0.05);
       // }
    }

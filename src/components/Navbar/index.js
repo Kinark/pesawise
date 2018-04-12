@@ -71,8 +71,9 @@ export default class Navbar extends Component {
          <div>
             <SideNav isOpen={sidebar} onStateChange={(state) => this.handleStateChange(state)} customBurgerIcon={false} customCrossIcon={false}>
                <div>
-                  <div className="bg-header-side"> </div>
-                  <Image onClick={this.closeMenu} as={Link} to='/' src={LogoFullGradient} size='large' style={{ display: 'inherit', width: '85%', margin: '0 auto 20px auto' }} />
+                  <div className="bg-header-side">
+                     <Image onClick={this.closeMenu} as={Link} to='/' src={LogoFullGradient} size='large' style={{ display: 'inherit', width: '85%', margin: '0 auto' }} />
+                  </div>
                   {!loading &&
                      Object.entries(routes).map(([key, value], index) => (
                         <SimpleCollapsible className="side" key={index} title={key} closed>
