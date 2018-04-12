@@ -69,17 +69,20 @@ export default class Navbar extends Component {
 
       return (
          <div>
-            <SideNav isOpen={sidebar} onStateChange={(state) => this.handleStateChange(state)} customBurgerIcon={false}>
-               <Image as={Link} to='/' src={LogoFullGradient} size='large' style={{ display: 'inherit', marginBottom: '35px' }} />
-               {!loading &&
-                  Object.entries(routes).map(([key, value], index) => (
-                     <SimpleCollapsible key={index} title={key} closed>
-                        {Object.entries(value).map(([key, value], index) => (
-                           <Link onClick={this.closeMenu} key={index} to={value}>{key}</Link>
-                        ))}
-                     </SimpleCollapsible>
-                  ))
-               }
+            <SideNav isOpen={sidebar} onStateChange={(state) => this.handleStateChange(state)} customBurgerIcon={false} customCrossIcon={false}>
+               <div>
+                  <div className="bg-header-side"> </div>
+                  <Image onClick={this.closeMenu} as={Link} to='/' src={LogoFullGradient} size='large' style={{ display: 'inherit', width: '85%', margin: '0 auto 20px auto' }} />
+                  {!loading &&
+                     Object.entries(routes).map(([key, value], index) => (
+                        <SimpleCollapsible className="side" key={index} title={key} closed>
+                           {Object.entries(value).map(([key, value], index) => (
+                              <Link onClick={this.closeMenu} key={index} to={value}>{key}</Link>
+                           ))}
+                        </SimpleCollapsible>
+                     ))
+                  }
+               </div>
             </SideNav>
             <Menu position='right' className="uhu" borderless>
                <Container>

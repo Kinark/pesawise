@@ -4,6 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const ManifestPlugin = require("webpack-manifest-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
@@ -48,5 +49,6 @@ module.exports = merge(common, {
       new ImageminPlugin(ImageminPluginConfig),
       new UglifyJsPlugin(),
       new ManifestPlugin(ManifestPluginConfig),
+      new CopyWebpackPlugin([{ from: './src/api', to: 'api' }])
    ],
 });

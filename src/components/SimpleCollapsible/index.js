@@ -18,10 +18,11 @@ export default class SimpleCollapsible extends React.Component {
    }
 
    render() {
+      const extraClasses = this.props.className ? this.props.className : ''
       const bodyClass = this.state.show ? 'cola-body' : 'cola-body hidden'
       const titleClass = this.state.show ? 'cola-title active' : 'cola-title'
       return (
-         <div className="simple-collapsible">
+         <div className={extraClasses + " simple-collapsible"}>
             <p className={titleClass} onClick={this.toggleShow}>{this.props.title}</p>
             <div className={bodyClass}>
                <div>

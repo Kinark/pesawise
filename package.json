@@ -1,7 +1,7 @@
 {
-   "name": "elara-boilerplate",
+   "name": "some-random-job",
    "version": "1.0.0",
-   "description": "A dead-simple react/sass boilerplate.",
+   "description": "Nooooop.",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "webpack-dev-server --host 0.0.0.0 --port 8080 --config ./config/webpack.dev.js",
@@ -9,7 +9,7 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/Kinark/Elara.git"
+      "url": "git+https://github.com/Kinark/somerandomjob.git"
    },
    "keywords": [
       "boilerplate",
@@ -17,9 +17,9 @@
       "sass"
    ],
    "bugs": {
-      "url": "https://github.com/Kinark/Elara/issues"
+      "url": "https://github.com/Kinark/somerandomjob"
    },
-   "homepage": "https://github.com/Kinark/Elara#readme",
+   "homepage": "https://github.com/Kinark/somerandomjob#readme",
    "author": "Igor Marcossi",
    "license": "ISC",
    "devDependencies": {
@@ -28,6 +28,7 @@
       "babel-preset-env": "^1.6.1",
       "babel-preset-react": "^6.24.1",
       "clean-webpack-plugin": "^0.1.18",
+      "copy-webpack-plugin": "^4.5.1",
       "css-loader": "^0.28.9",
       "eslint": "^4.19.1",
       "eslint-plugin-react": "^7.7.0",
@@ -51,7 +52,6 @@
       "webpack-merge": "^4.1.2"
    },
    "dependencies": {
-      "@trendmicro/react-dropdown": "^1.2.2",
       "axios": "^0.18.0",
       "prop-types": "^15.6.0",
       "react": "^16.3.0",
@@ -61,9 +61,7 @@
       "react-helmet": "^5.2.0",
       "react-router-dom": "^4.2.2",
       "semantic-ui-css": "^2.3.1",
-      "semantic-ui-less": "^2.3.1",
       "semantic-ui-react": "^0.79.0",
-      "skeleton-css": "^2.0.4",
       "sweetalert": "^2.1.0"
    }
 }

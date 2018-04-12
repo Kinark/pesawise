@@ -1,5 +1,14 @@
 .simple-collapsible {
    margin-bottom: 1em;
+   &.side {
+      p.cola-title {
+         position: relative;
+         &::after {
+            position: absolute;
+            right: 0;
+         }
+      }
+   }
    p.cola-title {
       margin-bottom: 0;
       cursor: pointer;
@@ -7,17 +16,17 @@
       font-weight: 700;
       text-transform: capitalize;
       user-select: none;
-      &::before {
+      &::after {
          content: "▶";
          display: inline-block;
-         margin-right: 5px;
+         margin-left: 5px;
          font-size: 8px;
          vertical-align: top;
          transform: rotate(0deg);
          transition: .25s transform;
          user-select: none;
       }
-      &.active::before {
+      &.active::after {
          transform: rotate(90deg);
       }
    }
@@ -25,6 +34,7 @@
    .cola-body {
       max-height: 500px;
       transition: .25s max-height;
+      overflow-y: hidden;
       overflow-x: hidden;
       &>div {
          position: relative;

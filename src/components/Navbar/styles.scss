@@ -23,6 +23,19 @@ div.ui.uhu {
 
 
 
+.bg-header-side {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 110px;
+   width: 100%;
+   background-image: url('./images/header2x.jpg');
+   background-position: -910px -140px;
+   background-repeat: no-repeat;
+   background-size: 1670px;
+   pointer-events: none;
+}
 
 /* Position and sizing of burger button */
 
@@ -57,8 +70,8 @@ div.ui.uhu {
 
 .bm-menu {
    // background: #373a47;
-   background: #fafafa;
-   padding: 2.5em 1.5em 0;
+   background: #fafafa; 
+   padding: 0.5em 0 0;
    font-size: 1.15em;
 }
 
@@ -73,6 +86,14 @@ div.ui.uhu {
 .bm-item-list {
    color: #b8b7ad;
    padding: 0.8em;
+   .simple-collapsible {
+      margin: 0 -0.8em;
+      padding: 1em 2.8em;
+      border-bottom: solid 1px #eee;
+      &:hover {
+         background-color: rgba(0,0,0,0.05);
+      }
+   }
 }
 
 /* Styling of overlay */
@@ -83,8 +104,7 @@ div.ui.uhu {
 
 .bm-item-list a {
    padding: 0.8em;
-   color: #757575; 
-   // font-weight: 700;
+   color: #757575; // font-weight: 700;
    display: block;
    &:hover {
       color: #bdbdbd;

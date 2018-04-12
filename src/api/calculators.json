@@ -1,0 +1,405 @@
+[
+    {
+        "calculator": "MPESA Withdrawal & Transfer",
+        "id": "5ac90c520acab",
+        "category": "Mobile Money",
+        "active": "true",
+        "icon": "mobile",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "amount"
+            }
+        ],
+        "results": [
+            {
+                "name": "Var + 1",
+                "expression": "amount+1",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ],
+        "type": "radio"
+    },
+    {
+        "calculator": "Agent Commission",
+        "id": "5ac90c64ed77b",
+        "category": "Mobile Money",
+        "active": "true",
+        "icon": "ticket",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "x"
+            },
+            {
+                "type": "select",
+                "name": "Tenor",
+                "options": "91, 182, 364",
+                "variable_id": "y"
+            },
+            {
+                "type": "radio",
+                "name": "Sample Variable (z)",
+                "options": "2-days, 5-days",
+                "variable_id": "z"
+            },
+            {
+                "type": "checkbox",
+                "name": "Sample Variable (w)",
+                "options": "muito_dia",
+                "variable_id": "w"
+            },
+            {
+                "type": "text",
+                "name": "Asasas",
+                "options": "",
+                "variable_id": "h"
+            }
+        ],
+        "results": [
+            {
+                "name": "x+y+1+a",
+                "expression": "x+y+1+a",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "a",
+                        "value": "equity.CNY/KES.buying",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "x*y+1",
+                "expression": "x*y+1",
+                "min": "x>19",
+                "max": "x<70001",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "x*a+y (min 10/max 70000)",
+                "expression": "x*a+y",
+                "min": "10",
+                "max": "70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "b",
+                        "value": "safaricom.from-mpesa",
+                        "condition": ">=x"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "Equity to MPESA",
+        "id": "5ac90c6d62044",
+        "category": "Equity Bank",
+        "active": "true",
+        "icon": "tasks",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "Cash Withdrawal",
+        "id": "5ac90c6dcbccd",
+        "category": "Equity Bank",
+        "active": "true",
+        "icon": "",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "PesaLink",
+        "id": "5ac90c7932dbb",
+        "category": "Equity Bank",
+        "active": "true",
+        "icon": "refresh",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "PayPal to Equity",
+        "id": "5ac90c79a5aec",
+        "category": "Equity Bank",
+        "active": "true",
+        "icon": "paypal",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Commission",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "Airtel Money",
+        "id": "5ac90c7a1d9d6",
+        "category": "Mobile Money",
+        "active": "true",
+        "icon": "mail",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "PesaLink",
+        "id": "5ac90c7b0bf9f",
+        "category": "Other",
+        "active": "true",
+        "icon": "settings",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "Treasury Bills",
+        "id": "5ac90d0b5fd5a",
+        "category": "Other",
+        "active": "true",
+        "icon": "feed",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "New calculator",
+        "id": "5ace0c8783df3",
+        "category": "",
+        "active": "true",
+        "icon": "",
+        "variables": [
+            {
+                "type": "text",
+                "name": "Sample Variable",
+                "options": "",
+                "variable_id": "x"
+            }
+        ],
+        "results": [
+            {
+                "name": "Sample result",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "asasas",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -158,7 +158,7 @@ export default class Calculator extends React.Component {
                         </Form>
                      </Card>
                   </Grid.Column>
-                  <Grid.Column mobile={16} tablet={5} computer={11}>
+                  <Grid.Column mobile={16} tablet={11} computer={11}>
                      <Card className="calculators">
                         <Header as="h3" color="grey">Results</Header>
                         <List divided verticalAlign='middle' animated relaxed="very">
