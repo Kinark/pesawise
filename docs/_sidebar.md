@@ -3,7 +3,7 @@
   * [Navbar/Routes](navbar.md)
   * [Scrapping](scrapping.md)
   * [Application Structure](structure.md)
-  * [Running the procut](running.md)
+  * [Running the app](running.md)
 
 * Calculators
 
