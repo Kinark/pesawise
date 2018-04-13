@@ -8,7 +8,7 @@ import { typeOptions } from './components/DefaultObjects'
 import swal from 'sweetalert'
 import SimpleCollapsible from '~/components/SimpleCollapsible'
 import qs from 'qs';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Urlfy from '~/components/Urlfy'
 
 
@@ -202,12 +202,12 @@ export default class CalculatorEditor extends React.Component {
       const savingLoader = this.state.saving ? true : false
       const activeFix = (calculator.active == 'true')
       return (
-         <Grid.Column width={12}>
+         <Grid.Column mobile={16} tablet={16} computer={12}>
             <Button color="blue" value="true" loading={savingLoader} attached="top" onClick={this.saveCalculator}>SAVE CALCULATOR</Button>
             <Segment attached>
                <Form>
                   {!this.state.loading &&
-                     <div>
+                     <div style={{marginBottom: '15px'}}>
                         <h2>ID: {calculator.id}</h2>
                         <Checkbox toggle value="true" checked={activeFix} onChange={this.handleInputs} name="active" />
                         <Form.Group widths='equal'>
@@ -215,10 +215,12 @@ export default class CalculatorEditor extends React.Component {
                            <Form.Input label="Category" size="huge" value={calculator.category} name="category" onChange={this.handleInputs} name="category" type='text' />
                            <Form.Input label="Icon" size="huge" value={calculator.icon} name="icon" onChange={this.handleInputs} name="icon" type='text' />
                         </Form.Group>
-                        <Label>
-                           {/* <Icon name='linkify' /> {currentLink}/{calculator.calculator.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, "")}-{calculator.id} */}
-                           <Icon name='linkify' /> {Urlfy(currentLink + '/calculator/' + calculator.calculator)}
-                        </Label>
+                        <a href={Urlfy(currentLink + '/calculator/' + calculator.calculator)} target="_blank">
+                           <Label>
+                              {/* <Icon name='linkify' /> {currentLink}/{calculator.calculator.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, "")}-{calculator.id} */}
+                              <Icon name='linkify' /> {Urlfy(currentLink + '/calculator/' + calculator.calculator)}
+                           </Label>
+                        </a>
                      </div>
                   }
                   <Grid columns='equal'>

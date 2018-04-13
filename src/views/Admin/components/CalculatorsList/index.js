@@ -83,7 +83,7 @@ export default class CalculatorsList extends React.Component {
          <Container>
             <Grid columns='equal'>
                <Grid.Row>
-                  <Grid.Column>
+                  <Grid.Column style={{marginBottom: '20px'}}>
                      <Route path="/puppies/:calculatorId" component={UnloadCalculator} />
                      <Segment attached>
                         {this.state.loading ? (<Loading />) : (<CalculatorItems activeCalc={this.state.activeCalc} onClick={this.getActiveCalculator} calculators={this.state.calculators} />)}

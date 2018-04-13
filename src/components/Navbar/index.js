@@ -87,19 +87,19 @@ export default class Navbar extends Component {
             </SideNav>
             <Menu position='right' className="uhu" borderless>
                <Container>
-                  <Responsive maxWidth="600" as={Menu.Menu} position='left'>
+                  <Responsive maxWidth="950" as={Menu.Menu} position='left'>
                      <Menu.Item onClick={this.activateSidenav}>
                         <Icon size="large" name="sidebar" />
                      </Menu.Item>
                   </Responsive>
-                  <Responsive minWidth="601" as={LogoFull} />
-                  <Responsive maxWidth="600" as={LogoFullSmall} />
-                  <Responsive maxWidth="600" as={Menu.Menu} style={{ opacity: '0', pointerEvents: 'none' }} position='right'>
+                  <Responsive minWidth="951" as={LogoFull} />
+                  <Responsive maxWidth="950" as={LogoFullSmall} />
+                  <Responsive maxWidth="950" as={Menu.Menu} style={{ opacity: '0', pointerEvents: 'none' }} position='right'>
                      <Menu.Item onClick={this.activateSidenav}>
                         <Icon size="large" name="sidebar" />
                      </Menu.Item>
                   </Responsive>
-                  <Responsive minWidth="601" as={Menu.Menu} position='right'>
+                  <Responsive minWidth="951" as={Menu.Menu} position='right'>
                      {!loading &&
                         Object.entries(routes).map(([key, value], index) => (
                            <Dropdown basic open={false} key={index} text={key} simple icon={null} className='link item'>
