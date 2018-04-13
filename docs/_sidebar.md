@@ -22,3 +22,4 @@
     * [Result with min/max](configuring-calculators.md#result-with-minmax)
 
 * [Contact](contact.md)
+* [GitHub Repo](https://github.com/Kinark/somerandomjob)
