@@ -27,6 +27,7 @@ foreach($tablesDiv->find('table') as $table) {
             $tdCounter++;
          }
          $value = preg_replace('/N\/A/', '0', $value);
+         $value = preg_replace('/Free/', '0', $value);
          $value = preg_replace('/\,/', '', $value);
          if($tableCounter == 1) {
          $rates['from-mpesa'][$max] = $value;

@@ -16,13 +16,39 @@
         "results": [
             {
                 "name": "Send to Registered",
-                "expression": "to-mpesa",
-                "min": "",
-                "max": "",
+                "expression": "str",
+                "min": "amount>=1",
+                "max": "amount<=70000",
                 "used_rates_id": [
                     {
-                        "variable_id": "to-mpesa",
+                        "variable_id": "str",
                         "value": "safaricom.to-mpesa",
+                        "condition": ">=amount"
+                    }
+                ]
+            },
+            {
+                "name": "Withdraw from Agent",
+                "expression": "wfa",
+                "min": "amount>=50",
+                "max": "amount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "wfa",
+                        "value": "safaricom.from-mpesa",
+                        "condition": ">=amount"
+                    }
+                ]
+            },
+            {
+                "name": "Maximum Withdrawal at Agent",
+                "expression": "amount-wfa",
+                "min": "amount>=50",
+                "max": "amount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
                         "condition": ""
                     }
                 ]

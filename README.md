@@ -1,1 +1,1 @@
-Some job almost done.
+All documentation is in https://kinark.github.io/somerandomjob

@@ -2,9 +2,10 @@ import React from 'react';
 import './styles.scss';
 
 import HeaderImage from '~/components/HeaderImage'
-import { Grid, Container, Header, Button, Checkbox, Form, List } from 'semantic-ui-react'
+import { Grid, Container, Header, Button, Checkbox, Form, List, Responsive } from 'semantic-ui-react'
 import Card from '~/components/Card'
 import Axios from 'axios';
+import AdSense from 'react-adsense';
 import { ajaxUrl } from '~/components/Paths'
 import Urlfy from '~/components/Urlfy'
 
@@ -157,6 +158,11 @@ export default class Calculator extends React.Component {
                            }
                         </Form>
                      </Card>
+                     {!loading &&
+                        <Responsive maxWidth="767">
+                        <AdSense.Google client="ca-pub-9133489553464763" slot="9482666918" style={{ display: 'block' }} layout='in-article' format='fluid' />
+                        </Responsive>
+                     }
                   </Grid.Column>
                   <Grid.Column mobile={16} tablet={11} computer={11}>
                      <Card className="calculators">
@@ -176,6 +182,7 @@ export default class Calculator extends React.Component {
                      </Card>
                   </Grid.Column>
                </Grid>
+               <AdSense.Google client="ca-pub-9133489553464763" slot="6796793825" style={{ display: 'block' }} layout='in-article' format='fluid' />
             </Container>
          </div>
       );
