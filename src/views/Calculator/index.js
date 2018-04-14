@@ -158,11 +158,11 @@ export default class Calculator extends React.Component {
                            }
                         </Form>
                      </Card>
-                     {!loading &&
+                     {/* {!loading &&
                         <Responsive maxWidth="767">
                         <AdSense.Google client="ca-pub-9133489553464763" slot="9482666918" style={{ display: 'block' }} layout='in-article' format='fluid' />
                         </Responsive>
-                     }
+                     } */}
                   </Grid.Column>
                   <Grid.Column mobile={16} tablet={11} computer={11}>
                      <Card className="calculators">
