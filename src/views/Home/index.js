@@ -4,9 +4,8 @@ import './styles.scss';
 // import Categories from './components/Categories'
 import FavCalculators from '~/components/FavCalculators'
 import HeaderImage from '~/components/HeaderImage'
-import AdSense from 'react-adsense';
+// import AdSense from 'react-adsense';
 import { Container } from 'semantic-ui-react'
-// import { gaAddress } from '~/components/Paths'
 
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
@@ -19,7 +18,7 @@ const Home = () => {
             <FavCalculators />
          </div>
          <Container>
-            <AdSense.Google client="ca-pub-9133489553464763" slot="2012366852" />
+            {/* <AdSense.Google client="ca-pub-9133489553464763" slot="2012366852" /> */}
          </Container>
       </div>
    )

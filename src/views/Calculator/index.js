@@ -5,7 +5,7 @@ import HeaderImage from '~/components/HeaderImage'
 import { Grid, Container, Header, Button, Checkbox, Form, List, Responsive } from 'semantic-ui-react'
 import Card from '~/components/Card'
 import Axios from 'axios';
-import AdSense from 'react-adsense';
+// import AdSense from 'react-adsense';
 import { ajaxUrl } from '~/components/Paths'
 import Urlfy from '~/components/Urlfy'
 
@@ -182,7 +182,7 @@ export default class Calculator extends React.Component {
                      </Card>
                   </Grid.Column>
                </Grid>
-               <AdSense.Google client="ca-pub-9133489553464763" slot="6796793825" style={{ display: 'block' }} layout='in-article' format='fluid' />
+               {/* <AdSense.Google client="ca-pub-9133489553464763" slot="6796793825" style={{ display: 'block' }} layout='in-article' format='fluid' /> */}
             </Container>
          </div>
       );
