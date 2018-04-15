@@ -62,7 +62,8 @@ export default class Calculator extends React.Component {
       Object.entries(variables).map(([key, value], index) => {
          if (transformedString.indexOf(key) > -1) {
             const valueToReplace = value == '' ? 0 : value
-            transformedString = transformedString.replace(key, valueToReplace)
+            var regex = new RegExp(key + "\\b", "g");
+            transformedString = transformedString.replace(regex, valueToReplace)
          }
       });
       // console.log(transformedString)
