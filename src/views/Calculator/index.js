@@ -40,7 +40,7 @@ export default class Calculator extends React.Component {
    updateData() {
       const that = this;
       let rightCalculator;
-      Axios.get(ajaxUrl + '/api.php').then(function (response) {
+      Axios.post(ajaxUrl + '/api.php').then(function (response) {
          // console.log(response.data.calculators)
          rightCalculator = response.data.calculators.find(function (calculator) {
             return Urlfy(calculator.calculator) == that.props.match.params.calculatorName;

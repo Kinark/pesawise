@@ -32,7 +32,7 @@ export default class CalculatorEditor extends React.Component {
    updateData() {
       const that = this;
       let rightCalculator;
-      Axios.get(ajaxUrl + '/json/calculators.json').then(response => {
+      Axios.post(ajaxUrl + '/json/calculators.json').then(response => {
          rightCalculator = response.data.find(function (calculator) {
             return calculator.id == that.props.match.params.calculatorId;
          });

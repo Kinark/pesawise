@@ -17,7 +17,7 @@ class LogoutButton extends React.Component {
    logOut() {
       const that = this;
       this.setState({loading: true});
-      Axios.get(ajaxUrl + '/logout.php').then(function (response) {
+      Axios.post(ajaxUrl + '/logout.php').then(function (response) {
          that.setState({ loading: false });
          that.props.actions.logout();
       }).catch(function (error) {

@@ -19,7 +19,7 @@ export default class FavCalculators extends React.Component {
    componentDidMount() {
       // const favCalculators = []
       const that = this
-      Axios.get(ajaxUrl + '/json/calculators.json').then(response => {
+      Axios.post(ajaxUrl + '/json/calculators.json').then(response => {
          that.setState({ calculators: response.data.filter(calculator => calculator.icon != ''), loading: false })
       })
    }

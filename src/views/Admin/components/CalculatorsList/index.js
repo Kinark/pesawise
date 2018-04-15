@@ -23,7 +23,7 @@ export default class CalculatorsList extends React.Component {
 
    getData(here) {
       const that = here ? here : this;
-      Axios.get(ajaxUrl + '/json/calculators.json').then(function (response) {
+      Axios.post(ajaxUrl + '/json/calculators.json').then(function (response) {
          // console.log(response.data)
          if (!deepCompare(that.state.calculators, response.data)) {
             that.setState({ calculators: response.data, loading: false })

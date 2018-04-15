@@ -19,7 +19,7 @@ export default class Admin extends React.Component {
 
    checkLogin() {
       const that = this;
-      Axios.get(ajaxUrl + '/login.php').then(function (response) {
+      Axios.post(ajaxUrl + '/login.php').then(function (response) {
          // console.log(response.data)
          if (response.data == 1) {
             if (that.state.logged == false) that.setState({ logged: true })
