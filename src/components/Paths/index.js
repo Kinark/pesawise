@@ -1,10 +1,10 @@
+const currentLink = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '')
+
 const ajaxProdUrl = 'https://pesawise.co.ke/api';
-const ajaxDevUrl = 'http://marcossi.duckdns.org:8080/ajax';
-// const ajaxDevUrl = 'http://localhost:8080/ajax';
+const ajaxDevUrl = currentLink+'/ajax';
 
 const prodUrl = 'https://pesawise.co.ke';
-const devUrl = 'http://marcossi.duckdns.org:8080';
-// const devUrl = 'http://localhost:8080';
+const devUrl = currentLink;
 
 const adsense = {
    client: "ca-pub-9133489553464763",
