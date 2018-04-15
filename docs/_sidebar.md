@@ -4,6 +4,7 @@
   * [Scrapping](scrapping.md)
   * [Application Structure](structure.md)
   * [Running the app](running.md)
+  * [Backups](backup.md)
 
 * Calculators
 

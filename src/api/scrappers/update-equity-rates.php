@@ -24,7 +24,7 @@ foreach($carouselDiv->find('.single-forex') as $rate) {
 
 $json = json_encode($rates);
 
-$fp = fopen('../rates/equity.json', 'w');
+$fp = fopen('../json/rates/equity.json', 'w');
 fwrite($fp, $json);
 fclose($fp);
 

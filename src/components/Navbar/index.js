@@ -28,8 +28,8 @@ export default class Navbar extends Component {
       // const favCalculators = []
       const that = this
       Axios.all([
-         Axios.get(ajaxUrl + '/calculators.json').catch(),
-         Axios.get(ajaxUrl + '/nav-routes.json').catch()
+         Axios.get(ajaxUrl + '/json/calculators.json').catch(),
+         Axios.get(ajaxUrl + '/json/nav-routes.json').catch()
       ]).then(Axios.spread((res1, res2) => {
          let newRoutes = {};
          that.setState({ calculators: res1.data, routes: res2.data }, () => {

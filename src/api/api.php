@@ -2,11 +2,11 @@
 
 $json = array();
 
-$calculators = file_get_contents('calculators.json');
+$calculators = file_get_contents('json/calculators.json');
 // $calculators = preg_replace('/\s+/', '', $calculators);
 $json['calculators'] = json_decode($calculators);
 
-foreach(glob("rates/*.json") as $file) {
+foreach(glob("json/rates/*.json") as $file) {
    $filename = basename($file, '.json');
    $file = file_get_contents($file);
    // $file = preg_replace('/\s+/', '', $file);

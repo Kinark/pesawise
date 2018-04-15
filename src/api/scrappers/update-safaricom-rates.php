@@ -45,7 +45,7 @@ foreach($tablesDiv->find('table') as $table) {
 
 $json = json_encode($rates);
 
-$fp = fopen('../rates/safaricom.json', 'w');
+$fp = fopen('../json/rates/safaricom.json', 'w');
 fwrite($fp, $json);
 fclose($fp);
 

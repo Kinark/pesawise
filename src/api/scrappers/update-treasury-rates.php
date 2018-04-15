@@ -43,7 +43,7 @@ foreach($article->find('strong') as $strong) {
 
 $json = json_encode($rates);
 
-$fp = fopen('../rates/treasury.json', 'w');
+$fp = fopen('../json/rates/treasury.json', 'w');
 fwrite($fp, $json);
 fclose($fp);
 

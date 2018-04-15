@@ -7,7 +7,7 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
    die();
 }
 
-$calculatorsFilename = 'calculators.json';
+$calculatorsFilename = 'json/calculators.json';
 
 $calculatorsFile = file_get_contents($calculatorsFilename);
 $calculatorsFile = json_decode($calculatorsFile, JSON_UNESCAPED_SLASHES);
