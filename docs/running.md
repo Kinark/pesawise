@@ -14,14 +14,16 @@ $ cd some-folder
 
 #### Run in server mode
 
-In order to run it fully, you'll need two servers, one for the the front-end, which is achieved using dev-webpack-server by running:
+In order to run it fully, you'll need to have PHP installed into your computer. You can easily install it with XAMPP or WAMP. I personally would go with XAMPP, what you can download from:
+
+> https://www.apachefriends.org/download.html
+
+After that, run:
 
 ```
 $ npm i
 $ npm start
 ```
-
-And the other for the back-end written in PHP. You'll probably need to use Apache or Nginx, but it's your choice. But it's important to run it on port 8070. The api folder is inside the `src/api`.
 
 #### Making a build
 
