@@ -19,6 +19,7 @@ if(!isset($_POST['email']) || !isset($_POST['password'])) {
 }
 
 function checkCredentials($email, $pass) {
+   global $correct_email, $correct_password, $dev_email, $dev_password;
    switch ($email) {
       case $correct_email:
          return password_verify($pass, $correct_password);
