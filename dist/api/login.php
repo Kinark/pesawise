@@ -8,10 +8,10 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] === true) {
 }
 
 $correct_email = 'mintonne@gmail.com';
-$correct_password = '$2y$10$Jceltt6ow88XiM8IiuYgvOgFS3irryoCg4H8JNQK9AD81e8eyr0dq';
+$correct_password = '$2y$10$lFv/jaHDxliN8syOGzqsvubhJkXgkQ1IGe/7atNpuv76.B6XFhhYq';
 
 $dev_email = 'igormarcossi@gmail.com';
-$dev_password = '$2y$10$Q30ht4JG6AtrgEgSrmugAub87hfPMhYabFNp3CQRbkJjB7mCE19cy'; 
+$dev_password = '$2y$10$Q30ht4JG6AtrgEgSrmugAub87hfPMhYabFNp3CQRbkJjB7mCE19cy';
 
 if(!isset($_POST['email']) || !isset($_POST['password'])) {
    echo 0;

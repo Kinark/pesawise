@@ -28,6 +28,19 @@
                 ]
             },
             {
+                "name": "Send to Unregistered",
+                "expression": "stu",
+                "min": "amount>=101",
+                "max": "amount<=35000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "stu",
+                        "value": "safaricom.to-unregistered",
+                        "condition": ">=amount"
+                    }
+                ]
+            },
+            {
                 "name": "Withdraw from Agent",
                 "expression": "wfa",
                 "min": "amount>=50",
@@ -52,11 +65,76 @@
                         "condition": ""
                     }
                 ]
+            },
+            {
+                "name": "ATM Withdrawal",
+                "expression": "atmw",
+                "min": "amount>=200",
+                "max": "amount<=20000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "atmw",
+                        "value": "safaricom.atm",
+                        "condition": ">=amount"
+                    }
+                ]
+            },
+            {
+                "name": "Minimum Balance (Send to Registered)",
+                "expression": "amount+str",
+                "min": "amount>=1",
+                "max": "amount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "Minimum Balance (Send to Unregistered)",
+                "expression": "amount+stu",
+                "min": "amount>=101",
+                "max": "amount<=35000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "Amount + Withdrawal + Sending Charge",
+                "expression": "amount+wfa+str",
+                "min": "amount>=50",
+                "max": "amount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
+            },
+            {
+                "name": "Amount + Withdrawal Charge",
+                "expression": "amount+wfa",
+                "min": "amount>=50",
+                "max": "amount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "",
+                        "value": "",
+                        "condition": ""
+                    }
+                ]
             }
         ]
     },
     {
-        "calculator": "Agent Commission",
+        "calculator": "MPESA Agent Commission",
         "id": "5ac90c64ed77b",
         "category": "Mobile Money",
         "active": "true",
@@ -66,190 +144,46 @@
                 "type": "number",
                 "name": "Amount",
                 "options": "",
-                "variable_id": "x"
-            },
-            {
-                "type": "select",
-                "name": "Tenor",
-                "options": "91, 182, 364",
-                "variable_id": "y"
-            },
-            {
-                "type": "radio",
-                "name": "Sample Variable (z)",
-                "options": "2-days, 5-days",
-                "variable_id": "z"
-            },
-            {
-                "type": "checkbox",
-                "name": "Sample Variable (w)",
-                "options": "muito_dia",
-                "variable_id": "w"
-            },
-            {
-                "type": "text",
-                "name": "Asasas",
-                "options": "",
-                "variable_id": "h"
+                "variable_id": "acamount"
             }
         ],
         "results": [
             {
-                "name": "x+y+1+a",
-                "expression": "x+y+1+a",
-                "min": "",
-                "max": "",
+                "name": "Deposit Transactions",
+                "expression": "acd",
+                "min": "acamount>=50",
+                "max": "acamount<=70000",
                 "used_rates_id": [
                     {
-                        "variable_id": "a",
-                        "value": "equity.CNY/KES.buying",
-                        "condition": ""
+                        "variable_id": "acd",
+                        "value": "agentcomm.deposit",
+                        "condition": ">=acamount"
                     }
                 ]
             },
             {
-                "name": "x*y+1",
-                "expression": "x*y+1",
-                "min": "x>19",
-                "max": "x<70001",
+                "name": "Withdrawal Transactions (Registered User)",
+                "expression": "acwr",
+                "min": "acamount>=50",
+                "max": "acamount<=70000",
                 "used_rates_id": [
                     {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
+                        "variable_id": "acwr",
+                        "value": "agentcomm.withdrawal",
+                        "condition": ">=acamount"
                     }
                 ]
             },
             {
-                "name": "x*a+y (min 10/max 70000)",
-                "expression": "x*a+y",
-                "min": "10",
-                "max": "70000",
+                "name": "Withdrawal Transactions (Unregistered User)",
+                "expression": "acwu",
+                "min": "acamount>=101",
+                "max": "acamount<=35000",
                 "used_rates_id": [
                     {
-                        "variable_id": "b",
-                        "value": "safaricom.from-mpesa",
-                        "condition": ">=x"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "Equity to MPESA",
-        "id": "5ac90c6d62044",
-        "category": "Equity Bank",
-        "active": "true",
-        "icon": "tasks",
-        "variables": [
-            {
-                "type": "text",
-                "name": "Sample Variable",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "Cash Withdrawal",
-        "id": "5ac90c6dcbccd",
-        "category": "Equity Bank",
-        "active": "true",
-        "icon": "",
-        "variables": [
-            {
-                "type": "text",
-                "name": "Sample Variable",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "PesaLink",
-        "id": "5ac90c7932dbb",
-        "category": "Equity Bank",
-        "active": "true",
-        "icon": "refresh",
-        "variables": [
-            {
-                "type": "text",
-                "name": "Sample Variable",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "PayPal to Equity",
-        "id": "5ac90c79a5aec",
-        "category": "Equity Bank",
-        "active": "true",
-        "icon": "paypal",
-        "variables": [
-            {
-                "type": "number",
-                "name": "Amount",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Commission",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
+                        "variable_id": "acwu",
+                        "value": "agentcomm.withdrawal",
+                        "condition": ">=acamount"
                     }
                 ]
             }
@@ -260,168 +194,52 @@
         "id": "5ac90c7a1d9d6",
         "category": "Mobile Money",
         "active": "true",
-        "icon": "mail",
-        "variables": [
-            {
-                "type": "text",
-                "name": "Sample Variable",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "PesaLink",
-        "id": "5ac90c7b0bf9f",
-        "category": "Other",
-        "active": "true",
-        "icon": "settings",
-        "variables": [
-            {
-                "type": "text",
-                "name": "Sample Variable",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "Treasury Bills",
-        "id": "5ac90d0b5fd5a",
-        "category": "Other",
-        "active": "true",
-        "icon": "feed",
-        "variables": [
-            {
-                "type": "text",
-                "name": "Sample Variable",
-                "options": "",
-                "variable_id": "x"
-            }
-        ],
-        "results": [
-            {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "calculator": "New calculator",
-        "id": "5ace0c8783df3",
-        "category": "",
-        "active": "true",
         "icon": "",
         "variables": [
             {
-                "type": "text",
-                "name": "Sample Variable",
+                "type": "number",
+                "name": "Amount",
                 "options": "",
-                "variable_id": "x"
+                "variable_id": "amamount"
             }
         ],
         "results": [
             {
-                "name": "Sample result",
-                "expression": "",
-                "min": "",
-                "max": "",
+                "name": "Send to All Networks",
+                "expression": "stan",
+                "min": "amamount>=10",
+                "max": "amamount<=70000",
                 "used_rates_id": [
                     {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
+                        "variable_id": "stan",
+                        "value": "airtelmoney.send",
+                        "condition": ">=amamount"
                     }
                 ]
             },
             {
-                "name": "asasas",
-                "expression": "",
-                "min": "",
-                "max": "",
+                "name": "Withdraw from Agent (Registered User)",
+                "expression": "amwfa",
+                "min": "amamount>=50",
+                "max": "amamount<=70000",
                 "used_rates_id": [
                     {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
+                        "variable_id": "amwfa",
+                        "value": "airtelmoney.withdrawal",
+                        "condition": ">=amamount"
                     }
                 ]
             },
             {
-                "name": "",
-                "expression": "",
-                "min": "",
-                "max": "",
+                "name": "Withdraw from Agent (Unregistered User)",
+                "expression": "amwfau",
+                "min": "amamount>=50",
+                "max": "amamount<=35000",
                 "used_rates_id": [
                     {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            },
-            {
-                "name": "",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
-            },
-            {
-                "name": "",
-                "expression": "",
-                "min": "",
-                "max": "",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
+                        "variable_id": "amwfau",
+                        "value": "airtelmoney.withdrawal",
+                        "condition": ">=amamount"
                     }
                 ]
             }
