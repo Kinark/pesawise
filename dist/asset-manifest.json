@@ -1,0 +1,14 @@
+{
+  "main.js": "static/js/bundle.js",
+  "static\\media\\apple-touch-icon-114x114.png": "static/media/7946df71ecabbbaf0ed96e178e8c58b1-apple-touch-icon-114x114.png",
+  "static\\media\\apple-touch-icon-120x120.png": "static/media/419dd042cfe73bf8e7982512e978c477-apple-touch-icon-120x120.png",
+  "static\\media\\apple-touch-icon-144x144.png": "static/media/a7679a6ab18a29d29adb71174709002d-apple-touch-icon-144x144.png",
+  "static\\media\\apple-touch-icon-152x152.png": "static/media/bc461bc927fb2c026acaf0ca86c87735-apple-touch-icon-152x152.png",
+  "static\\media\\brand-icons.svg": "static/media/a1a749e89f578a49306ec2b055c073da-brand-icons.svg",
+  "static\\media\\flags.png": "static/media/9c74e172f87984c48ddf5c8108cabe67-flags.png",
+  "static\\media\\header.jpg": "static/media/d91d14632ebb3f0a51ba75236988df80-header.jpg",
+  "static\\media\\header2x.jpg": "static/media/838ccbf5a0c7823f8f9ab8615dfd3f6d-header2x.jpg",
+  "static\\media\\icons.svg": "static/media/962a1bf31c081691065fe333d9fa8105-icons.svg",
+  "static\\media\\mstile-144x144.png": "static/media/a7679a6ab18a29d29adb71174709002d-mstile-144x144.png",
+  "static\\media\\outline-icons.svg": "static/media/82f60bd0b94a1ed68b1e6e309ce2e8c3-outline-icons.svg"
+}
