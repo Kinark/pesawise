@@ -247,7 +247,7 @@ export default class CalculatorEditor extends React.Component {
                            }
                            <Button fluid onClick={this.addVariable}>Add new variable</Button>
                         </Grid.Column>
-                        <Grid.Column width={9}>
+                        <Grid.Column width={10}>
                            <Divider horizontal>Results</Divider>
                            {!this.state.loading &&
                               calculator.results.map((i, resultIndex) => {

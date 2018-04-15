@@ -80,7 +80,7 @@ export default class CalculatorsList extends React.Component {
 
    render() {
       return (
-         <Container>
+         <Container className="admin">
             <Grid columns='equal'>
                <Grid.Row>
                   <Grid.Column style={{marginBottom: '20px'}}>
