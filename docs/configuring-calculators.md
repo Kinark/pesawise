@@ -2,7 +2,7 @@
 
 Configuring the calculators can be a little complicated, but it's the easier way to make a flexible system for adding new types of calculators.
 
-The calculators settings is divided in two parts, the variabled and the results. Everything runs around the expression fields in each result. Everything is used primarily to declarate `variable_id's` (for both user inputs and rates references) to be used to calculate the result.
+The calculators settings are divided in two parts, the variables and the results. Everything runs around the expression fields in each result. Everything is used primarily to declarate `variable_id's` (for both user inputs and rates references) to be used to calculate the result.
 
 ## Quick peak
 
@@ -25,7 +25,7 @@ The variables are showed inside the variables card (left side on desktops and su
 
 #### Result structure
 
-The result is showed inside the results card (right side on desktops and inferior side on mobiles). They define how each each result will be calculated, so it involves more rules. Check it structure and some explanations:
+The result is showed inside the results card (right side on desktops and inferior side on mobiles). They define how each result will be calculated, so it involves more rules. Check it structure and some explanations:
 
 ```javascript
 "results": [
@@ -47,11 +47,11 @@ The result is showed inside the results card (right side on desktops and inferio
 
 ## Variables - Deeper Look
 
-Now we're goin to take take a deeper look into each kind of variable declaration.
+Now we're going to take a deeper look into each kind of variable declaration.
 
 #### Text/Number
 
-These are the simpliest ones. Just choose a label in `name` and bind a variable to it in `variable_id`:
+These are the simplest ones. Just choose a label in `name` and bind a variable to it in `variable_id`:
 
 ```javascript
 "variables" [
@@ -68,7 +68,7 @@ Of course the number field will allow only numbers. Actually, only integer numbe
 
 #### Radio
 
-For the radios we don't use the `name` field. Since you can only choose one radio in a radio group, the labels will be the same as the values. And in order to declare the values/labels we define them in `options` field, separated by a comma (avoid white spaces for now). (I'll update this to achieve separated labels and values by utilizing multiple labels with comma in `name` field)
+For the radios we don't use the `name` field. Since you can only choose one radio in a radio group, the labels will be the same as the values. And in order to declare the values/labels we define them in `options` field, separated by a comma (avoid white spaces for now). (I'll update this to achieve separated labels and values by using multiple labels with comma in `name` field)
 
 ```javascript
 "variables" [
@@ -126,7 +126,7 @@ There's a trick with this one. In order to achieve different values and labels, 
 
 Results involves a little more things to deal with and one of the most important of them are the references. Let's check them.
 
-> It's important to remember that ALL the `variable_id's` (and by all, I mean all, both variables and rates references) share the same "scope", so DO NOT utilize the same variable_id for more than one thing.
+> It's important to remember that ALL the `variable_id's` (and by all, I mean all, both variables and rates references) share the same "scope", so DO NOT use the same variable_id for more than one thing.
 
 #### Simple result 
 
@@ -226,7 +226,7 @@ Let's take a look at the path provided in `value` field in the `api.php`:
 }
 ```
 
-See? `safaricom.from-mpesa` is an object, not a exact value. But we also defined a condition:
+See? `safaricom.from-mpesa` is an object, not an exact value. But we also defined a condition:
 
 ```javascript
 ...
