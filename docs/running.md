@@ -14,9 +14,13 @@ $ cd some-folder
 
 #### Run in server mode
 
-In order to run it fully, you'll need to have PHP installed into your computer. You can easily install it with XAMPP or WAMP. I personally would go with XAMPP, what you can download from:
+In order to run it fully, you'll need to have PHP installed into your computer and added your PATH. You can easily install it with XAMPP or WAMP. I personally would go with XAMPP, what you can download from:
 
 > https://www.apachefriends.org/download.html
+
+And to add into the PATH (Windows), follow:
+
+> https://markladoux.wordpress.com/2012/07/06/run-php-from-command-line-with-xampp-on-windows-7/
 
 After that, run:
 
