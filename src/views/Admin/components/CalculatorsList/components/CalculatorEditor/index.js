@@ -67,6 +67,7 @@ export default class CalculatorEditor extends React.Component {
          expression: "",
          min: "",
          max: "",
+         decimals: "",
          used_rates_id: [
             {
                variable_id: "",
@@ -203,7 +204,7 @@ export default class CalculatorEditor extends React.Component {
       const activeFix = (calculator.active == 'true')
       return (
          <Grid.Column mobile={16} tablet={16} computer={12}>
-            <Button color="blue" value="true" loading={savingLoader} attached="top" onClick={this.saveCalculator}>SAVE CALCULATOR</Button>
+            {/* <Button color="blue" value="true" loading={savingLoader} attached="top" onClick={this.saveCalculator}>SAVE CALCULATOR</Button> */}
             <Segment attached>
                <Form>
                   {!this.state.loading &&
@@ -254,10 +255,11 @@ export default class CalculatorEditor extends React.Component {
                                  return (
                                     <div key={resultIndex}>
                                        <Form.Group widths='equal'>
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".name"} width={6} value={i.name} fluid label='Name' type='text' />
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".expression"} width={4} value={i.expression} fluid label='Expression' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".name"} width={4} value={i.name} fluid label='Name' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".expression"} width={3} value={i.expression} fluid label='Expression' type='text' />
                                           <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".min"} width={3} value={i.min} fluid label='Min' type='text' />
                                           <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".max"} width={3} value={i.max} fluid label='Max' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".decimals"} width={2} value={i.decimals} fluid label='Decimals' type='text' />
                                        </Form.Group>
                                        <SimpleCollapsible title="rates">
                                           {typeof i.used_rates_id != "undefined" &&
@@ -286,6 +288,7 @@ export default class CalculatorEditor extends React.Component {
                   </Grid>
                </Form>
             </Segment>
+            <Button color="blue" value="true" loading={savingLoader} attached="bottom" onClick={this.saveCalculator}>SAVE CALCULATOR</Button>
             <Button loading={savingLoader} color="red" attached="bottom" onClick={this.deleteCalculator}>DELETE CALCULATOR</Button>
          </Grid.Column>
       );

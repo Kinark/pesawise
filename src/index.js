@@ -10,8 +10,8 @@ import 'semantic-ui-css/semantic.min.css'
 // import "../pesawise-semantic/semantic.less";
 import './style.scss'
 
-const title = 'PesaWise'
-const description = 'Simple, cool and fast.'
+const title = 'PesaWise | M-PESA, PesaLink, PayPal, Treasury Bills'
+const description = 'Calculate Safaricom M-PESA transaction charges, Airtel Money, T-Kash, PesaLink fees for all major Kenyan banks, PayPal to Equity Account fees using the up to date exchange rates, Treasury Bills Investment Return, M-PESA Agent Commission & so much more.'
 // const cover = "";
 
 ReactDOM.render(

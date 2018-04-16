@@ -18,6 +18,7 @@ const defaultResult = {
    expression: "",
    min: "",
    max: "",
+   decimals: "2",
    used_rates_id: [
       {
          variable_id: "",
