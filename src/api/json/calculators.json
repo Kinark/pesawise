@@ -456,7 +456,7 @@
         "variables": [
             {
                 "type": "number",
-                "name": "Amount (Dollars)",
+                "name": "Amount (USD)",
                 "options": "",
                 "variable_id": "peamt"
             }
@@ -472,7 +472,7 @@
                     {
                         "variable_id": "exrate",
                         "value": "equity.USD/KES.buying",
-                        "condition": ">=peamt"
+                        "condition": ""
                     }
                 ]
             },
@@ -489,6 +489,38 @@
                         "condition": ">=peamt"
                     }
                 ]
+            },
+            {
+                "name": "Commission (USD)",
+                "expression": "pecomm*peamt/100",
+                "min": "peamt>=1",
+                "max": "peamt<=10000",
+                "decimals": "3",
+                "used_rates_id": []
+            },
+            {
+                "name": "Net Value (USD)",
+                "expression": "peamt-(pecomm*peamt/100)",
+                "min": "peamt>=1",
+                "max": "peamt<=10000",
+                "decimals": "3",
+                "used_rates_id": []
+            },
+            {
+                "name": "Commission (KES)",
+                "expression": "(pecomm*peamt/100)*exrate",
+                "min": "peamt>=1",
+                "max": "peamt<=10000",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Net Value (KES)",
+                "expression": "(peamt-(pecomm*peamt/100))*exrate",
+                "min": "peamt>=1",
+                "max": "peamt<=10000",
+                "decimals": "",
+                "used_rates_id": []
             }
         ]
     }
