@@ -33,6 +33,7 @@ if ($_POST['action'] == 'add') {
             'expression' => '',
             'min' => '',
             'max' => '',
+            'decimals' =>'',
             'used_rates_id' => array(
                0 => array(
                   'variable_id' => '',

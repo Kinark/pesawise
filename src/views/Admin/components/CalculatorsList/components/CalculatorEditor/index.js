@@ -254,10 +254,11 @@ export default class CalculatorEditor extends React.Component {
                                  return (
                                     <div key={resultIndex}>
                                        <Form.Group widths='equal'>
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".name"} width={6} value={i.name} fluid label='Name' type='text' />
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".expression"} width={4} value={i.expression} fluid label='Expression' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".name"} width={4} value={i.name} fluid label='Name' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".expression"} width={3} value={i.expression} fluid label='Expression' type='text' />
                                           <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".min"} width={3} value={i.min} fluid label='Min' type='text' />
                                           <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".max"} width={3} value={i.max} fluid label='Max' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".decimals"} width={2} value={i.decimals} fluid label='Decimals' type='text' />
                                        </Form.Group>
                                        <SimpleCollapsible title="rates">
                                           {typeof i.used_rates_id != "undefined" &&
