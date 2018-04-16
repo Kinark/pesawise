@@ -15,7 +15,7 @@ const Footer = () => {
                   And never miss an oportunity!
                </Header.Subheader>
             </Header> */}
-            <Header as="h2">
+            <Header as="h3">
                DISCLAIMER
             </Header>
             {/* <p>You can have our calculators anywhere you go!</p> */}

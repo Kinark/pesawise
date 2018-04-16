@@ -414,5 +414,48 @@
                 ]
             }
         ]
+    },
+    {
+        "calculator": "PayPal to Equity",
+        "id": "5ad46f22817ef",
+        "category": "Equity Bank",
+        "active": "false",
+        "icon": "paypal",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount (Dollars)",
+                "options": "",
+                "variable_id": "peamt"
+            }
+        ],
+        "results": [
+            {
+                "name": "Exchange Rate (KES/USD)",
+                "expression": "exrate",
+                "min": "",
+                "max": "",
+                "used_rates_id": [
+                    {
+                        "variable_id": "exrate",
+                        "value": "equity.USD/KES.buying",
+                        "condition": ">=peamt"
+                    }
+                ]
+            },
+            {
+                "name": "Commission Rate (%)",
+                "expression": "pecomm",
+                "min": "peamt>=1",
+                "max": "pecomm<=10000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "pecomm",
+                        "value": "equitypaypal.rate",
+                        "condition": ">=peamt"
+                    }
+                ]
+            }
+        ]
     }
 ]

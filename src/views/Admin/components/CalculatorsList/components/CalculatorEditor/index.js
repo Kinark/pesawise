@@ -203,7 +203,7 @@ export default class CalculatorEditor extends React.Component {
       const activeFix = (calculator.active == 'true')
       return (
          <Grid.Column mobile={16} tablet={16} computer={12}>
-            <Button color="blue" value="true" loading={savingLoader} attached="top" onClick={this.saveCalculator}>SAVE CALCULATOR</Button>
+            {/* <Button color="blue" value="true" loading={savingLoader} attached="top" onClick={this.saveCalculator}>SAVE CALCULATOR</Button> */}
             <Segment attached>
                <Form>
                   {!this.state.loading &&
@@ -286,6 +286,7 @@ export default class CalculatorEditor extends React.Component {
                   </Grid>
                </Form>
             </Segment>
+            <Button color="blue" value="true" loading={savingLoader} attached="bottom" onClick={this.saveCalculator}>SAVE CALCULATOR</Button>
             <Button loading={savingLoader} color="red" attached="bottom" onClick={this.deleteCalculator}>DELETE CALCULATOR</Button>
          </Grid.Column>
       );

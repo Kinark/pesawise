@@ -13,7 +13,7 @@ import CalculatorsList from './components/CalculatorsList'
 const Admin = () => {
    return (
       <div>
-         <HeaderImage noContainer header="Admin panel (or 🐶)" description="Let's edit some jsons." />
+         <HeaderImage noContainer header="Admin panel" description="Let's edit some jsons." />
          <LoginProtect>
             <Route component={CalculatorsList} />
             <Container>
