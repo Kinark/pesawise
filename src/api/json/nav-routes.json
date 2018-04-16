@@ -1,6 +1,12 @@
 {
-   "Mobile Money": [
-      "5ac90c520acab",
-	  "5ac90c64ed77b"
-   ]
+    "Mobile Money": [
+        "5ac90c520acab",
+        "5ac90c64ed77b",
+        "5ac90c7a1d9d6",
+        "5ad3ce38bde9b"
+    ],
+    "Equity Bank": [
+        "5ad3db714b2e3",
+        "5ad3eae891419"
+    ]
 }

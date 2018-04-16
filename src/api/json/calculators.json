@@ -58,13 +58,7 @@
                 "expression": "amount-wfa",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
+                "used_rates_id": []
             },
             {
                 "name": "ATM Withdrawal",
@@ -84,52 +78,28 @@
                 "expression": "amount+str",
                 "min": "amount>=1",
                 "max": "amount<=70000",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
+                "used_rates_id": []
             },
             {
                 "name": "Minimum Balance (Send to Unregistered)",
                 "expression": "amount+stu",
                 "min": "amount>=101",
                 "max": "amount<=35000",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
+                "used_rates_id": []
             },
             {
-                "name": "Amount + Withdrawal + Sending Charge",
+                "name": "Amount + Withdrawal & Sending Charge",
                 "expression": "amount+wfa+str",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
+                "used_rates_id": []
             },
             {
                 "name": "Amount + Withdrawal Charge",
                 "expression": "amount+wfa",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "used_rates_id": [
-                    {
-                        "variable_id": "",
-                        "value": "",
-                        "condition": ""
-                    }
-                ]
+                "used_rates_id": []
             }
         ]
     },
@@ -194,7 +164,7 @@
         "id": "5ac90c7a1d9d6",
         "category": "Mobile Money",
         "active": "true",
-        "icon": "",
+        "icon": "font",
         "variables": [
             {
                 "type": "number",
@@ -218,7 +188,7 @@
                 ]
             },
             {
-                "name": "Withdraw from Agent (Registered User)",
+                "name": "Withdraw from Agent",
                 "expression": "amwfa",
                 "min": "amamount>=50",
                 "max": "amamount<=70000",
@@ -231,15 +201,215 @@
                 ]
             },
             {
-                "name": "Withdraw from Agent (Unregistered User)",
-                "expression": "amwfau",
+                "name": "Maximum Withdrawal at Agent",
+                "expression": "amamount-amwfa",
                 "min": "amamount>=50",
-                "max": "amamount<=35000",
+                "max": "amamount<=70000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Amount + Withdrawal & Sending Charge",
+                "expression": "amamount+amwfa+stan",
+                "min": "amamount>=10",
+                "max": "amamount<=70000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Amount + Withdrawal Charge",
+                "expression": "amamount+amwfa",
+                "min": "amamount>=50",
+                "max": "amamount<=70000",
+                "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "T-Kash",
+        "id": "5ad3ce38bde9b",
+        "category": "Mobile Money",
+        "active": "true",
+        "icon": "money",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "tkamount"
+            }
+        ],
+        "results": [
+            {
+                "name": "Send to Registered",
+                "expression": "tkstr",
+                "min": "tkamount>=1",
+                "max": "tkamount<=70000",
                 "used_rates_id": [
                     {
-                        "variable_id": "amwfau",
-                        "value": "airtelmoney.withdrawal",
-                        "condition": ">=amamount"
+                        "variable_id": "tkstr",
+                        "value": "tkash.to-registered",
+                        "condition": ">=tkamount"
+                    }
+                ]
+            },
+            {
+                "name": "Send to Unregistered",
+                "expression": "tkstu",
+                "min": "tkamount>=101",
+                "max": "tkamount<=35000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "tkstu",
+                        "value": "tkash.to-unregistered",
+                        "condition": ">=tkamount"
+                    }
+                ]
+            },
+            {
+                "name": "Withdraw from Agent",
+                "expression": "tkwfa",
+                "min": "tkamount>=50",
+                "max": "tkamount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "tkwfa",
+                        "value": "tkash.agent",
+                        "condition": ">=tkamount"
+                    }
+                ]
+            },
+            {
+                "name": "Maximum Withdrawal at Agent",
+                "expression": "tkamount-tkwfa",
+                "min": "tkamount>=50",
+                "max": "tkamount<=70000",
+                "used_rates_id": []
+            },
+            {
+                "name": "ATM Withdrawal",
+                "expression": "tkatm",
+                "min": "tkamount>=1",
+                "max": "tkamount<=20000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "tkatm",
+                        "value": "tkash.atm",
+                        "condition": ">=tkamount"
+                    }
+                ]
+            },
+            {
+                "name": "Bulk Disbursement",
+                "expression": "tkbd",
+                "min": "tkamount>=50",
+                "max": "tkamount<=70000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "tkbd",
+                        "value": "tkash.bulk",
+                        "condition": ">=tkamount"
+                    }
+                ]
+            },
+            {
+                "name": "Minimum Balance (Send to Registered)",
+                "expression": "tkamount-tkstr",
+                "min": "tkamount>=1",
+                "max": "tkamount<=70000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Minimum Balance (Send to Unregistered)",
+                "expression": "tkamount-tkstu",
+                "min": "tkamount>=101",
+                "max": "tkamount<=35000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Amount + Withdrawal & Sending Charge",
+                "expression": "tkamount+tkwfa+tkstr",
+                "min": "tkamount>=1",
+                "max": "tkamount<=70000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Amount + Withdrawal Charge",
+                "expression": "tkamount+tkwfa",
+                "min": "tkamount>=50",
+                "max": "tkamount<=70000",
+                "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "Equity to MPESA",
+        "id": "5ad3db714b2e3",
+        "category": "Equity Bank",
+        "active": "true",
+        "icon": "send",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "etmamt"
+            }
+        ],
+        "results": [
+            {
+                "name": "Standing Charge (Safaricom)",
+                "expression": "33",
+                "min": "etmamt>=100",
+                "max": "etmamt<=35000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Transaction Fees (Equity Bank)",
+                "expression": "Math.min(27.5,(etmamt*0.011))",
+                "min": "etmamt>=100",
+                "max": "etmamt<=35000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Total",
+                "expression": "33+(Math.min(27.5,(etmamt*0.011)))",
+                "min": "etmamt>=100",
+                "max": "etmamt<=35000",
+                "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "Equity Cash Withdrawal",
+        "id": "5ad3eae891419",
+        "category": "Equity Bank",
+        "active": "true",
+        "icon": "credit card",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "ecwamt"
+            }
+        ],
+        "results": [
+            {
+                "name": "ATM Withdrawal",
+                "expression": "33",
+                "min": "ecwamt>=100",
+                "max": "ecwamt<=30000",
+                "used_rates_id": []
+            },
+            {
+                "name": "Withdraw from Agent",
+                "expression": "ecwwfa",
+                "min": "ecwamt>=100",
+                "max": "ecwamt<=100000",
+                "used_rates_id": [
+                    {
+                        "variable_id": "ecwwfa",
+                        "value": "equityagent.withdraw",
+                        "condition": ">=ecwamt"
                     }
                 ]
             }
