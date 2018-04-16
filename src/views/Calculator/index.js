@@ -128,7 +128,16 @@ export default class Calculator extends React.Component {
             const evaluatedExpression = this.replaceVariablesInStrig(i.expression)
             value = eval(evaluatedExpression);
             if (typeof value == 'undefined') return;
-            prevResultsResults[index] = value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+
+            if(i.decimals != '')
+            {
+                  const evaluatedDecimals = this.replaceVariablesInStrig(i.decimals)
+                  prevResultsResults[index] = value.toFixed(evaluatedDecimals).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+            }
+            else
+            {
+                  prevResultsResults[index] = value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+            }
          })
          this.setState({ resultsResults: prevResultsResults })
       })

@@ -67,6 +67,7 @@ export default class CalculatorEditor extends React.Component {
          expression: "",
          min: "",
          max: "",
+         decimals: "",
          used_rates_id: [
             {
                variable_id: "",
