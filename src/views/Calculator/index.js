@@ -24,6 +24,14 @@ const deep_value = function (obj, path) {
    return obj;
 };
 
+const defaultState = {
+   calculator: { calculator: 'Loading...', category: 'Loading...' },
+   variables: {},
+   loading: true,
+   rates: [],
+   resultsResults: {}
+}
+
 export default class Calculator extends React.Component {
    constructor(props) {
       super(props);
@@ -33,26 +41,36 @@ export default class Calculator extends React.Component {
          loading: true,
          rates: [],
          resultsResults: {}
-      };
+      }
+      // this.state = this.initialState;
+      // this.state = {};
       this.inputHandler = this.inputHandler.bind(this)
    }
 
    updateData() {
       const that = this;
-      let rightCalculator;
-      Axios.post(ajaxUrl + '/api.php').then(function (response) {
-         // console.log(response.data.calculators)
-         rightCalculator = response.data.calculators.find(function (calculator) {
-            return Urlfy(calculator.calculator) == that.props.match.params.calculatorName;
+      this.setState({
+         calculator: { calculator: 'Loading...', category: 'Loading...' },
+         variables: {},
+         loading: true,
+         rates: [],
+         resultsResults: {}
+      }, ()=>{
+         let rightCalculator;
+         Axios.post(ajaxUrl + '/api.php').then(function (response) {
+            // console.log(response.data.calculators)
+            rightCalculator = response.data.calculators.find(function (calculator) {
+               return Urlfy(calculator.calculator) == that.props.match.params.calculatorName;
+            });
+            // console.log(rightCalculator)
+            // rightCalculator
+            const variablesCreator = {}
+            rightCalculator.variables.map(i => {
+               variablesCreator[i.variable_id] = ''
+            })
+            that.setState({ calculator: rightCalculator, variables: variablesCreator, rates: response.data.rates, loading: false, })
          });
-         // console.log(rightCalculator)
-         // rightCalculator
-         const variablesCreator = {}
-         rightCalculator.variables.map(i => {
-            variablesCreator[i.variable_id] = ''
-         })
-         that.setState({ calculator: rightCalculator, variables: variablesCreator, rates: response.data.rates, loading: false, })
-      });
+      })
    }
 
    replaceVariablesInStrig(string) {
@@ -71,7 +89,8 @@ export default class Calculator extends React.Component {
    }
 
    componentWillReceiveProps() {
-      this.updateData();
+      const that = this
+      that.updateData();
    }
 
    setRatesVariables(cb) {
