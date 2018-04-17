@@ -29,15 +29,15 @@ function getValue($str) {
 foreach($article->find('strong') as $strong) {
    if($strong->plaintext == '91-DAY') {
       $str = $strong->parent()->next_sibling()->plaintext;
-      $rates['91-day'] = getValue($str);
+      $rates['91'] = getValue($str);
    }
    else if($strong->plaintext == '182-DAY') {
       $str = $strong->parent()->next_sibling()->plaintext;
-      $rates['182-day'] = getValue($str);
+      $rates['182'] = getValue($str);
    }
    else if($strong->plaintext == '364-DAY') {
       $str = $strong->parent()->next_sibling()->plaintext;
-      $rates['364-day'] = getValue($str);
+      $rates['364'] = getValue($str);
    } 
 }
 
