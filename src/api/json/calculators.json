@@ -19,7 +19,7 @@
                 "expression": "str",
                 "min": "amount>=1",
                 "max": "amount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "str",
@@ -33,7 +33,7 @@
                 "expression": "stu",
                 "min": "amount>=101",
                 "max": "amount<=35000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "stu",
@@ -47,7 +47,7 @@
                 "expression": "wfa",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "wfa",
@@ -61,7 +61,7 @@
                 "expression": "amount-wfa",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -69,7 +69,7 @@
                 "expression": "atmw",
                 "min": "amount>=200",
                 "max": "amount<=20000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "atmw",
@@ -83,7 +83,7 @@
                 "expression": "amount+str",
                 "min": "amount>=1",
                 "max": "amount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -91,7 +91,7 @@
                 "expression": "amount+stu",
                 "min": "amount>=101",
                 "max": "amount<=35000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -99,7 +99,7 @@
                 "expression": "amount+wfa+str",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -107,7 +107,7 @@
                 "expression": "amount+wfa",
                 "min": "amount>=50",
                 "max": "amount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             }
         ]
@@ -132,7 +132,7 @@
                 "expression": "acd",
                 "min": "acamount>=50",
                 "max": "acamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "acd",
@@ -146,7 +146,7 @@
                 "expression": "acwr",
                 "min": "acamount>=50",
                 "max": "acamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "acwr",
@@ -160,7 +160,7 @@
                 "expression": "acwu",
                 "min": "acamount>=101",
                 "max": "acamount<=35000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "acwu",
@@ -191,7 +191,7 @@
                 "expression": "stan",
                 "min": "amamount>=10",
                 "max": "amamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "stan",
@@ -205,7 +205,7 @@
                 "expression": "amwfa",
                 "min": "amamount>=50",
                 "max": "amamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "amwfa",
@@ -219,7 +219,7 @@
                 "expression": "amamount-amwfa",
                 "min": "amamount>=50",
                 "max": "amamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -227,7 +227,7 @@
                 "expression": "amamount+amwfa+stan",
                 "min": "amamount>=10",
                 "max": "amamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -235,7 +235,7 @@
                 "expression": "amamount+amwfa",
                 "min": "amamount>=50",
                 "max": "amamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             }
         ]
@@ -260,7 +260,7 @@
                 "expression": "tkstr",
                 "min": "tkamount>=1",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "tkstr",
@@ -274,7 +274,7 @@
                 "expression": "tkstu",
                 "min": "tkamount>=101",
                 "max": "tkamount<=35000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "tkstu",
@@ -288,7 +288,7 @@
                 "expression": "tkwfa",
                 "min": "tkamount>=50",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "tkwfa",
@@ -302,7 +302,7 @@
                 "expression": "tkamount-tkwfa",
                 "min": "tkamount>=50",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -310,7 +310,7 @@
                 "expression": "tkatm",
                 "min": "tkamount>=1",
                 "max": "tkamount<=20000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "tkatm",
@@ -324,7 +324,7 @@
                 "expression": "tkbd",
                 "min": "tkamount>=50",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": [
                     {
                         "variable_id": "tkbd",
@@ -338,7 +338,7 @@
                 "expression": "tkamount-tkstr",
                 "min": "tkamount>=1",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -346,7 +346,7 @@
                 "expression": "tkamount-tkstu",
                 "min": "tkamount>=101",
                 "max": "tkamount<=35000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -354,7 +354,7 @@
                 "expression": "tkamount+tkwfa+tkstr",
                 "min": "tkamount>=1",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -362,7 +362,7 @@
                 "expression": "tkamount+tkwfa",
                 "min": "tkamount>=50",
                 "max": "tkamount<=70000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             }
         ]
@@ -428,7 +428,7 @@
                 "expression": "33",
                 "min": "ecwamt>=100",
                 "max": "ecwamt<=30000",
-                "decimals": "",
+                "decimals": "0",
                 "used_rates_id": []
             },
             {
@@ -521,6 +521,172 @@
                 "max": "peamt<=10000",
                 "decimals": "",
                 "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "PesaLink",
+        "id": "5ad54d3d41c7d",
+        "category": "Banking",
+        "active": "true",
+        "icon": "exchange",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "plamt"
+            }
+        ],
+        "results": [
+            {
+                "name": "Equity Bank",
+                "expression": "pleb",
+                "min": "plamt>=10",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "pleb",
+                        "value": "pesalink.equity",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "Kenya Commercial Bank (KCB)",
+                "expression": "plkcb",
+                "min": "plamt>=10",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "plkcb",
+                        "value": "pesalink.kcb",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "Co-operative Bank (Co-op)",
+                "expression": "plcoop",
+                "min": "plamt>=1",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "plcoop",
+                        "value": "pesalink.coop",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "Standard Chartered",
+                "expression": "plsc",
+                "min": "plamt>=10",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "plsc",
+                        "value": "pesalink.sc",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "Stanbic Bank",
+                "expression": "plsb",
+                "min": "plamt>=1",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "plsb",
+                        "value": "pesalink.stanbic",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "Bank of Africa (BOA)",
+                "expression": "plboa",
+                "min": "plamt>=10",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "plboa",
+                        "value": "pesalink.boa",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "Diamond Trust Bank (DTB)",
+                "expression": "pldtb",
+                "min": "plamt>=10",
+                "max": "plamt<=999999",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "pldtb",
+                        "value": "pesalink.dtb",
+                        "condition": ">=plamt"
+                    }
+                ]
+            },
+            {
+                "name": "M-PESA (Send to Registered)",
+                "expression": "plmpesa",
+                "min": "plamt>=1",
+                "max": "plamt<=70000",
+                "decimals": "0",
+                "used_rates_id": [
+                    {
+                        "variable_id": "plmpesa",
+                        "value": "safaricom.to-mpesa",
+                        "condition": ">=plamt"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "calculator": "Treasury Bills",
+        "id": "5ad5553881454",
+        "category": "Investments",
+        "active": "true",
+        "icon": "university",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Initial Investment",
+                "options": "",
+                "variable_id": "tbamt"
+            },
+            {
+                "type": "select",
+                "name": "Tenor (Days)",
+                "options": "91,182,364",
+                "variable_id": "tbtenor"
+            }
+        ],
+        "results": [
+            {
+                "name": "Average Interest rate",
+                "expression": "tlair",
+                "min": "",
+                "max": "",
+                "decimals": "3",
+                "used_rates_id": [
+                    {
+                        "variable_id": "tlair",
+                        "value": "treasury",
+                        "condition": "==tbtenor"
+                    }
+                ]
             }
         ]
     }
