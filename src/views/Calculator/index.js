@@ -219,13 +219,13 @@ class InputHandler extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
-         radioChecked: null
+         radioChecked: 0
       };
       this.handleRadio = this.handleRadio.bind(this)
       // this.handleCheckbox = this.handleCheckbox.bind(this)
    }
-   handleRadio(e, { name, value }) {
-      this.setState({ radioChecked: value })
+   handleRadio(e, { name, value, index }) {
+      this.setState({ radioChecked: index })
       this.props.onChange(e, { name, value })
    }
    // handleCheckbox(e, { name, value, checked }) {
@@ -261,7 +261,7 @@ class InputHandler extends React.Component {
       else if (type == 'radio')
          return (
             optionsArray.map((i, index) => {
-               return <Form.Radio checked={this.state.radioChecked === i} onChange={this.handleRadio} name={name} label={i} value={i} key={index} />
+               return <Form.Radio checked={this.state.radioChecked === index} index={index} onChange={this.handleRadio} name={name} label={i} value={i} key={index} />
             })
          )
       else if (type == 'checkbox')
