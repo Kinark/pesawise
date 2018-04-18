@@ -233,24 +233,23 @@ class InputHandler extends React.Component {
          }
       }
       if (type == 'decimal') {
-            // if(isNaN(value)){
-            //      value = value.replace(/[^0-9]\.]/g,'');
-            //      if(value.split('.').length>2) 
-            //      value =value.replace(/\.+$/,"");
-            //      return;
-            // }
-            if(isNaN(value)){
-                  value = value.replace(/[^0-9]\.]/g,'');
-                  if(value.split('.').length>2) 
-                  value =value.replace(/\.+$/,"");
-                  return;
-             }
+         // if(isNaN(value)){
+         //      value = value.replace(/[^0-9]\.]/g,'');
+         //      if(value.split('.').length>2) 
+         //      value =value.replace(/\.+$/,"");
+         //      return;
+         // }
+         if (isNaN(value)) {
+            value = value.replace(/[^0-9]\.]/g, '');
+            if (value.split('.').length > 2)
+               value = value.replace(/\.+$/, "");
+            return;
+         }
 
-             if(value == '00')
-             {
-                   value = '0';
-                   return;
-             }
+         if (value == '00') {
+            value = '0';
+            return;
+         }
       }
       onChange(name, value, checked)
    }
@@ -261,8 +260,11 @@ class InputHandler extends React.Component {
          let optionsArray = options.replace(/ /g, '').split(',');
          onChange(name, optionsArray[0])
       }
+      else if (type == 'select') {
+         let optionsArray = options.replace(/ /g, '').split(',');
+         onChange(name, optionsArray[0])
+      }
    }
-
 
    render() {
       const { label, value, type, name, options } = this.props;
@@ -275,11 +277,11 @@ class InputHandler extends React.Component {
       if (type == 'text')
          return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type={type} />
       if (type == 'number')
-         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15'/>
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15' />
       else if (type == 'decimal')
-         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15'/>
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15' />
       else if (type == 'select')
-         return <Form.Select onChange={this.inputHandler} name={name} label={label} fluid options={optionsObject} />
+         return <Form.Select onChange={this.inputHandler} name={name} value={value} label={label} fluid options={optionsObject} />
       else if (type == 'radio')
          return (
             optionsArray.map((i, index) => {
