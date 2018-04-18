@@ -227,20 +227,31 @@ class InputHandler extends React.Component {
    inputHandler(e, { name, value, checked }) {
       const { onChange, type } = this.props;
       if (type == 'number') {
-         var regex = /^[0-9]*$/;
+         var regex = /^[1-9][0-9]*$/;
          if (!regex.test(value) && value) {
             return;
          }
       }
       if (type == 'decimal') {
+            // if(isNaN(value)){
+            //      value = value.replace(/[^0-9]\.]/g,'');
+            //      if(value.split('.').length>2) 
+            //      value =value.replace(/\.+$/,"");
+            //      return;
+            // }
+            if(isNaN(value)){
+                  value = value.replace(/[^0-9]\.]/g,'');
+                  if(value.split('.').length>2) 
+                  value =value.replace(/\.+$/,"");
+                  return;
+             }
 
-            value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-
-            if (value.length > 15)
-            {
-                value = value.slice(0, 15);
-            }
-         }
+             if(value == '00')
+             {
+                   value = '0';
+                   return;
+             }
+      }
       onChange(name, value, checked)
    }
 
@@ -266,7 +277,7 @@ class InputHandler extends React.Component {
       if (type == 'number')
          return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15'/>
       else if (type == 'decimal')
-         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='number'/>
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15'/>
       else if (type == 'select')
          return <Form.Select onChange={this.inputHandler} name={name} label={label} fluid options={optionsObject} />
       else if (type == 'radio')
