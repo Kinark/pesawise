@@ -1,6 +1,7 @@
 const typeOptions = [
    { key: 't', text: 'Text', value: 'text' },
    { key: 'n', text: 'Number', value: 'number' },
+   { key: 'd', text: 'Decimal', value: 'decimal' },
    { key: 's', text: 'Select', value: 'select' },
    { key: 'c', text: 'Checkbox', value: 'checkbox' },
    { key: 'r', text: 'Radio', value: 'radio' },

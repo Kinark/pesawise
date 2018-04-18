@@ -232,6 +232,15 @@ class InputHandler extends React.Component {
             return;
          }
       }
+      if (type == 'decimal') {
+            var regex = /^[0-9]+([.][0-9]+)?$/g;
+            if (!regex.test(value)) {
+               return;
+            }
+
+            if (value.length > 15)
+                value = value.slice(0, 15);
+         }
       onChange(name, value, checked)
    }
 
@@ -255,7 +264,9 @@ class InputHandler extends React.Component {
       if (type == 'text')
          return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type={type} />
       if (type == 'number')
-         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' />
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' maxLength='15'/>
+      else if (type == 'decimal')
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='number' />
       else if (type == 'select')
          return <Form.Select onChange={this.inputHandler} name={name} label={label} fluid options={optionsObject} />
       else if (type == 'radio')

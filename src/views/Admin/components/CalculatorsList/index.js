@@ -49,7 +49,7 @@ export default class CalculatorsList extends React.Component {
          if (response.data == 1) {
             that.getData();
          } else {
-            swal("Oh no!", "Somethind went wrong D:", "error");
+            swal("Oh no!", "Something went wrong D:", "error");
          }
       }).catch(function (error) {
          console.log(error);

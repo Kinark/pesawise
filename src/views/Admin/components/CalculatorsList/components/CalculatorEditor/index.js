@@ -161,7 +161,7 @@ export default class CalculatorEditor extends React.Component {
 
    deleteCalculator() {
       const that = this;
-      swal('OMG!!!', "Are you sure you want to delete the whole calculator?", { buttons: ["Cancel", "Delete"], dangerMode: true, icon: 'warning' }).then(value => {
+      swal('Delete!', "Are you sure you want to delete the whole calculator?", { buttons: ["Cancel", "Delete"], dangerMode: true, icon: 'warning' }).then(value => {
          if (value !== true) return;
          this.setState({ saving: true })
          Axios({
@@ -234,7 +234,7 @@ export default class CalculatorEditor extends React.Component {
                                     <div key={varIndex}>
                                        <Form.Group widths='equal'>
                                           <Form.Input onChange={this.handleInputs} name={"variables." + varIndex + ".name"} value={i.name} fluid label='Name' type='text' />
-                                          <Form.Select onChange={this.handleInputs} name={"variables." + varIndex + ".type"} value={i.type} fluid label='Type' options={typeOptions} placeholder='Gender' />
+                                          <Form.Select onChange={this.handleInputs} name={"variables." + varIndex + ".type"} value={i.type} fluid label='Type' options={typeOptions} placeholder='Type' />
                                        </Form.Group>
                                        <Form.Group widths='equal'>
                                           <Form.Input onChange={this.handleInputs} name={"variables." + varIndex + ".options"} value={i.options} fluid label='Options' placeholder="a, b, c, d" type='text' />
@@ -256,10 +256,10 @@ export default class CalculatorEditor extends React.Component {
                                     <div key={resultIndex}>
                                        <Form.Group widths='equal'>
                                           <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".name"} width={4} value={i.name} fluid label='Name' type='text' />
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".expression"} width={3} value={i.expression} fluid label='Expression' type='text' />
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".min"} width={3} value={i.min} fluid label='Min' type='text' />
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".max"} width={3} value={i.max} fluid label='Max' type='text' />
-                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".decimals"} width={2} value={i.decimals} fluid label='Decimals' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".expression"} width={4} value={i.expression} fluid label='Expression' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".min"} width={2} value={i.min} fluid label='Min' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".max"} width={2} value={i.max} fluid label='Max' type='text' />
+                                          <Form.Input onChange={this.handleInputs} name={"results." + resultIndex + ".decimals"} width={1} value={i.decimals} fluid label='Decimals' type='text' />
                                        </Form.Group>
                                        <SimpleCollapsible title="rates">
                                           {typeof i.used_rates_id != "undefined" &&

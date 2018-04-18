@@ -1,6 +1,6 @@
 [
     {
-        "calculator": "MPESA Withdrawal & Transfer",
+        "calculator": "M-PESA Withdrawal & Transfer",
         "id": "5ac90c520acab",
         "category": "Mobile Money",
         "active": "true",
@@ -113,7 +113,7 @@
         ]
     },
     {
-        "calculator": "MPESA Agent Commission",
+        "calculator": "M-PESA Agent Commission",
         "id": "5ac90c64ed77b",
         "category": "Mobile Money",
         "active": "true",
@@ -368,7 +368,7 @@
         ]
     },
     {
-        "calculator": "Equity to MPESA",
+        "calculator": "Equity to M-PESA & Airtel Money",
         "id": "5ad3db714b2e3",
         "category": "Equity Bank",
         "active": "true",
@@ -383,7 +383,7 @@
         ],
         "results": [
             {
-                "name": "Standing Charge (Safaricom)",
+                "name": "Charges by Other Networks",
                 "expression": "33",
                 "min": "etmamt>=100",
                 "max": "etmamt<=35000",
@@ -391,7 +391,7 @@
                 "used_rates_id": []
             },
             {
-                "name": "Transaction Fees (Equity Bank)",
+                "name": "Charges by Equity Bank",
                 "expression": "Math.min(27.5,(etmamt*0.011))",
                 "min": "etmamt>=100",
                 "max": "etmamt<=35000",
@@ -399,7 +399,7 @@
                 "used_rates_id": []
             },
             {
-                "name": "Total",
+                "name": "Total Charge",
                 "expression": "33+(Math.min(27.5,(etmamt*0.011)))",
                 "min": "etmamt>=100",
                 "max": "etmamt<=35000",
@@ -658,7 +658,7 @@
         "id": "5ad5553881454",
         "category": "Investments",
         "active": "true",
-        "icon": "university",
+        "icon": "",
         "variables": [
             {
                 "type": "number",
@@ -675,18 +675,201 @@
         ],
         "results": [
             {
-                "name": "Average Interest rate",
-                "expression": "tlair",
+                "name": "Average Interest Rate (%)",
+                "expression": "tbair",
                 "min": "",
                 "max": "",
                 "decimals": "3",
                 "used_rates_id": [
                     {
-                        "variable_id": "tlair",
+                        "variable_id": "tbair",
                         "value": "treasury",
                         "condition": "==tbtenor"
                     }
                 ]
+            },
+            {
+                "name": "Face Value",
+                "expression": "100 * (1/ (1 + ((tbair/ 100) * (tbtenor/365))))",
+                "min": "",
+                "max": "",
+                "decimals": "3",
+                "used_rates_id": []
+            },
+            {
+                "name": "Total Offer Payment",
+                "expression": "",
+                "min": "",
+                "max": "",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Withholding Tax (15%)",
+                "expression": "((tbamt-(tbamt/100 *((100*(1/ (1 + ((tbair/ 100) * (tbtenor/365))))))))* 0.15)",
+                "min": "",
+                "max": "",
+                "decimals": "",
+                "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "M-Shwari Loan",
+        "id": "5ad70565de412",
+        "category": "Mobile Money",
+        "active": "true",
+        "icon": "percent",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Loan Amount",
+                "options": "",
+                "variable_id": "mshamt"
+            }
+        ],
+        "results": [
+            {
+                "name": " Facility Fee (7.5%)",
+                "expression": "0.075*mshamt",
+                "min": "mshamt>=100",
+                "max": "",
+                "decimals": "2",
+                "used_rates_id": []
+            },
+            {
+                "name": "Repayment Amount",
+                "expression": "mshamt+(0.075*mshamt)",
+                "min": "mshamt>=100",
+                "max": "",
+                "decimals": "2",
+                "used_rates_id": []
+            },
+            {
+                "name": "Repayment Period (Days)",
+                "expression": "30",
+                "min": "mshamt>=100",
+                "max": "",
+                "decimals": "0",
+                "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "KCB M-PESA Loan",
+        "id": "5ad70ad6d86ee",
+        "category": "Mobile Money",
+        "active": "true",
+        "icon": "",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Loan Amount",
+                "options": "",
+                "variable_id": "kcbamt"
+            }
+        ],
+        "results": [
+            {
+                "name": "Interest Rate (1.16%)",
+                "expression": "kcbamt*0.0116",
+                "min": "kcbamt>=50",
+                "max": "kcbamt<=1000000",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "One Off Negotiation Fee (2.5%)",
+                "expression": "kcbamt*0.025",
+                "min": "kcbamt>=50",
+                "max": "kcbamt<=1000000",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Excise Duty on Fees (10%)",
+                "expression": "(kcbamt*0.025)*0.1",
+                "min": "kcbamt>=50",
+                "max": "kcbamt<=1000000",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Total Fees (3.91%)",
+                "expression": "(kcbamt*0.0116)+(kcbamt*0.025)+((kcbamt*0.025)*0.1)",
+                "min": "kcbamt>=50",
+                "max": "kcbamt<=1000000",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Amount Received",
+                "expression": "kcbamt-((kcbamt*0.0116)+(kcbamt*0.025)+((kcbamt*0.025)*0.1))",
+                "min": "kcbamt>=50",
+                "max": "kcbamt<=1000000",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Repayment Perioid (Days)",
+                "expression": "30",
+                "min": "kcbamt>=50",
+                "max": "kcbamt<=1000000",
+                "decimals": "0",
+                "used_rates_id": []
+            }
+        ]
+    },
+    {
+        "calculator": "Website Ad Revenue ",
+        "id": "5ad7154a3ca18",
+        "category": "Business",
+        "active": "true",
+        "icon": "",
+        "variables": [
+            {
+                "type": "number",
+                "name": "Monthly Visits",
+                "options": "",
+                "variable_id": "warvisits"
+            },
+            {
+                "type": "decimal",
+                "name": "Page views per visit",
+                "options": "",
+                "variable_id": "warpvpv"
+            },
+            {
+                "type": "decimal",
+                "name": "Page RPM",
+                "options": "",
+                "variable_id": "warprpm"
+            }
+        ],
+        "results": [
+            {
+                "name": "Monthly Visits",
+                "expression": "warvisits",
+                "min": "warvisits>=1",
+                "max": "",
+                "decimals": "0",
+                "used_rates_id": []
+            },
+            {
+                "name": "Page Views",
+                "expression": "warvisits*warpvpv",
+                "min": "warvisits>=1",
+                "max": "",
+                "decimals": "0",
+                "used_rates_id": []
+            },
+            {
+                "name": "Revenue",
+                "expression": "warvisits*warpvpv*(warprpm/1000)",
+                "min": "warvisits>=1",
+                "max": "",
+                "decimals": "2",
+                "used_rates_id": []
             }
         ]
     }
