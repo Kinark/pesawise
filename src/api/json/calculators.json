@@ -872,5 +872,60 @@
                 "used_rates_id": []
             }
         ]
+    },
+    {
+        "calculator": "VAT Calculator",
+        "id": "5ad7256408094",
+        "category": "Business",
+        "active": "true",
+        "icon": "",
+        "variables": [
+            {
+                "type": "decimal",
+                "name": "Amount",
+                "options": "",
+                "variable_id": "vatamt"
+            },
+            {
+                "type": "number",
+                "name": "Rate (%)",
+                "options": "",
+                "variable_id": "vatrate"
+            }
+        ],
+        "results": [
+            {
+                "name": "Amount (Post-VAT)",
+                "expression": "vatamt+(vatamt*vatrate/100)",
+                "min": "vatamt>=1",
+                "max": "",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "VAT Added",
+                "expression": "(vatamt*vatrate/100)",
+                "min": "",
+                "max": "",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "Amount (Pre-VAT)",
+                "expression": "vatamt/(1+(vatrate/100))",
+                "min": "",
+                "max": "",
+                "decimals": "",
+                "used_rates_id": []
+            },
+            {
+                "name": "VAT Removed",
+                "expression": "vatamt-(vatamt/(1+(vatrate/100)))",
+                "min": "",
+                "max": "",
+                "decimals": "",
+                "used_rates_id": []
+            }
+        ]
     }
 ]
