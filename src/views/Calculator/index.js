@@ -158,7 +158,7 @@ export default class Calculator extends React.Component {
       })
    }
 
-   inputHandler(e, { name, value, checked }) {
+   inputHandler(name, value, checked) {
       const sendValue = checked === undefined ? value : (checked ? value : "")
       const prevVariables = this.state.variables
       prevVariables[name] = sendValue;
@@ -219,52 +219,52 @@ class InputHandler extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
-         radioChecked: 0
+         radioChecked: null
       };
-      this.handleRadio = this.handleRadio.bind(this)
-      // this.handleCheckbox = this.handleCheckbox.bind(this)
+      this.inputHandler = this.inputHandler.bind(this)
    }
-   handleRadio(e, { name, value, index }) {
-      this.setState({ radioChecked: index })
-      this.props.onChange(e, { name, value })
-   }
-   // handleCheckbox(e, { name, value, checked }) {
-   //    this.props.onChange(e, { name, value, checked })
-   // }
 
-   validate(e) {
-      var theEvent = e || window.event;
-      var key = theEvent.keyCode || theEvent.which;
-      key = String.fromCharCode(key);
-      var regex = /[0-9]/;
-      if (!regex.test(key)) {
-         theEvent.returnValue = false;
-         if (theEvent.preventDefault) theEvent.preventDefault();
+   inputHandler(e, { name, value, checked }) {
+      const { onChange, type } = this.props;
+      if (type == 'number') {
+         var regex = /^[0-9]*$/;
+         if (!regex.test(value) && value) {
+            return;
+         }
+      }
+      onChange(name, value, checked)
+   }
+
+   componentDidMount() {
+      const { name, options, type, onChange } = this.props;
+      if (type == 'radio') {
+         let optionsArray = options.replace(/ /g, '').split(',');
+         onChange(name, optionsArray[0])
       }
    }
 
+
    render() {
-      const { onChange, label, value, type, name, options } = this.props;
+      const { label, value, type, name, options } = this.props;
       let optionsArray = options.replace(/ /g, '').split(',');
       let optionsObject = []
       optionsArray.map(i => {
-         // console.log(i)
          let pushObject = { key: i, text: i, value: i }
          optionsObject.push(pushObject)
       })
       if (type == 'text')
-         return <Form.Input onChange={onChange} name={name} value={value} label={label} fluid type={type} />
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type={type} />
       if (type == 'number')
-         return <Form.Input onChange={onChange} onKeyPress={this.validate} name={name} value={value} label={label} fluid type={type} />
+         return <Form.Input onChange={this.inputHandler} name={name} value={value} label={label} fluid type='text' />
       else if (type == 'select')
-         return <Form.Select onChange={onChange} name={name} label={label} fluid options={optionsObject} />
+         return <Form.Select onChange={this.inputHandler} name={name} label={label} fluid options={optionsObject} />
       else if (type == 'radio')
          return (
             optionsArray.map((i, index) => {
-               return <Form.Radio checked={this.state.radioChecked === index} index={index} onChange={this.handleRadio} name={name} label={i} value={i} key={index} />
+               return <Form.Radio checked={value === i} index={index} onChange={this.inputHandler} name={name} label={i} value={i} key={index} />
             })
          )
       else if (type == 'checkbox')
-         return <Form.Checkbox onChange={onChange} name={name} value={options} label={label} />
+         return <Form.Checkbox onChange={this.inputHandler} name={name} value={options} label={label} />
    }
 }
