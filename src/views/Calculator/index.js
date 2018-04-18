@@ -55,7 +55,7 @@ export default class Calculator extends React.Component {
          loading: true,
          rates: [],
          resultsResults: {}
-      }, ()=>{
+      }, () => {
          let rightCalculator;
          Axios.post(ajaxUrl + '/api.php').then(function (response) {
             // console.log(response.data.calculators)
@@ -133,29 +133,25 @@ export default class Calculator extends React.Component {
             if (i.min != '') {
                const evaluatedMin = this.replaceVariablesInStrig(i.min)
                if (!eval(evaluatedMin)) {
-                  prevResultsResults[index] = 'Min. is: ' + i.min.replace(/^\D+/g, '');
+                  prevResultsResults[index] = 'Min. is: ' + i.min.replace(/^\D+/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                   return;
                }
             }
             if (i.max != '') {
                const evaluatedMax = this.replaceVariablesInStrig(i.max)
                if (!eval(evaluatedMax)) {
-                  prevResultsResults[index] = 'Max. is: ' + i.max.replace(/^\D+/g, '');
+                  prevResultsResults[index] = 'Max. is: ' + i.max.replace(/^\D+/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                   return;
                }
             }
             const evaluatedExpression = this.replaceVariablesInStrig(i.expression)
             value = eval(evaluatedExpression);
             if (typeof value == 'undefined') return;
-
-            if(i.decimals != '')
-            {
-                  const evaluatedDecimals = this.replaceVariablesInStrig(i.decimals)
-                  prevResultsResults[index] = value.toFixed(evaluatedDecimals).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
-            }
-            else
-            {
-                  prevResultsResults[index] = value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+            if (i.decimals != '') {
+               const evaluatedDecimals = this.replaceVariablesInStrig(i.decimals)
+               prevResultsResults[index] = value.toFixed(evaluatedDecimals).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
+            } else {
+               prevResultsResults[index] = value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
             }
          })
          this.setState({ resultsResults: prevResultsResults })
