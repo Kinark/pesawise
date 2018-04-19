@@ -452,7 +452,7 @@
         "id": "5ad46f22817ef",
         "category": "Equity Bank",
         "active": "true",
-        "icon": "paypal",
+        "icon": "paypal card",
         "variables": [
             {
                 "type": "number",
@@ -711,6 +711,38 @@
                 "max": "",
                 "decimals": "",
                 "used_rates_id": []
+            },
+            {
+                "name": "test",
+                "expression": "(100 * (1 / (1 + ((tbair / 100) * (tbtenor / 365))))).round(3)",
+                "min": "",
+                "max": "",
+                "decimals": "3",
+                "used_rates_id": []
+            },
+            {
+                "name": "test 2",
+                "expression": "((tbamt - (tbamt / 100 * (100 * (1 / (1 + ((tbair / 100) * (tbtenor / 365))))))) * 0.15).round(2)",
+                "min": "",
+                "max": "",
+                "decimals": "2",
+                "used_rates_id": []
+            },
+            {
+                "name": "test 3",
+                "expression": "(((tbamt / 100) * (100 * (1 / (1 + ((tbair / 100) * (tbtenor / 365)))))) + ((tbamt - (tbamt / 100 * (100 * (1 / (1 + ((tbair / 100) * (tbtenor / 365))))))) * 0.15)).round(2)",
+                "min": "",
+                "max": "",
+                "decimals": "2",
+                "used_rates_id": []
+            },
+            {
+                "name": "test 4",
+                "expression": "(tbamt-(((tbamt / 100) * (100 * (1 / (1 + ((tbair / 100) * (tbtenor / 365)))))) + ((tbamt - (tbamt / 100 * (100 * (1 / (1 + ((tbair / 100) * (tbtenor / 365))))))) * 0.15))).round(2)",
+                "min": "",
+                "max": "",
+                "decimals": "2",
+                "used_rates_id": []
             }
         ]
     },
@@ -760,7 +792,7 @@
         "id": "5ad70ad6d86ee",
         "category": "Mobile Money",
         "active": "true",
-        "icon": "",
+        "icon": "suitcase",
         "variables": [
             {
                 "type": "number",
@@ -825,7 +857,7 @@
         "id": "5ad7154a3ca18",
         "category": "Business",
         "active": "true",
-        "icon": "",
+        "icon": "browser",
         "variables": [
             {
                 "type": "number",
@@ -903,7 +935,7 @@
                 "used_rates_id": []
             },
             {
-                "name": "VAT Added",
+                "name": "VAT",
                 "expression": "(vatamt*vatrate/100)",
                 "min": "",
                 "max": "",
@@ -919,7 +951,7 @@
                 "used_rates_id": []
             },
             {
-                "name": "VAT Removed",
+                "name": "VAT",
                 "expression": "vatamt-(vatamt/(1+(vatrate/100)))",
                 "min": "",
                 "max": "",

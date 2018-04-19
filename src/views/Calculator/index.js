@@ -125,6 +125,10 @@ export default class Calculator extends React.Component {
    }
 
    calculateThings() {
+      Number.prototype.round = function(places) {
+            return +(Math.round(this + "e+" + places)  + "e-" + places);
+          }
+
       this.setRatesVariables(() => {
          const results = this.state.calculator.results
          let prevResultsResults = this.state.resultsResults
