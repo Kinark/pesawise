@@ -14,6 +14,18 @@ const title = 'PesaWise | M-PESA, PesaLink, PayPal, Treasury Bills'
 const description = 'Calculate Safaricom M-PESA transaction charges, Airtel Money, T-Kash, PesaLink fees for all major Kenyan banks, PayPal to Equity Account fees using the up to date exchange rates, Treasury Bills Investment Return, M-PESA Agent Commission & so much more.'
 // const cover = "";
 
+if (!Object.entries) {
+   window.Object.entries = function (obj) {
+      var ownProps = Object.keys(obj),
+         i = ownProps.length,
+         resArray = new Array(i); // preallocate the Array
+      while (i--)
+         resArray[i] = [ownProps[i], obj[ownProps[i]]];
+
+      return resArray;
+   };
+}
+
 ReactDOM.render(
    <div>
       <Metas title={title} description={description} />
