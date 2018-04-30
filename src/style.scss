@@ -2,10 +2,8 @@
    box-sizing: border-box;
 }
 
-// @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
 html,
 body {
-   // font-family: 'Raleway', sans-serif !important;
    font-weight: 400;
 }
 
@@ -19,11 +17,9 @@ h3,
 h4,
 h5,
 h6 {
-   font-weight: 400 !important; // font-family: 'Raleway', sans-serif !important;
-   // font-family: 'Raleway', sans-serif !important;
+   font-weight: 400 !important; 
 }
 
-// h1 {font-size: 2.75rem}
 html,
 body,
 #root,
@@ -44,52 +40,3 @@ main {
 footer {
    flex-shrink: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-html {
-   overflow: hidden;
-   // width: 100%;
-}
-
-body {
-   height: 100%;
-   position: fixed;
-   /* prevent overscroll bounce*/
-   overflow-y: scroll;
-   -webkit-overflow-scrolling: touch;
-   /* iOS velocity scrolling */
-   width: 100%;
-   // margin-left: 25%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// #root>div>div>.pushable>.pusher>div {
-//    display: flex;
-//    flex-direction: column;
-//    height: 100%;
-// }
-// .pushable>.pusher {
-//    height: 100%;
-// }
-// .pushable>.pusher:after {
-//    pointer-events: none;
-// }

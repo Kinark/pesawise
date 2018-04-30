@@ -50,9 +50,18 @@ export default class Navbar extends Component {
    handleStateChange(state) {
       this.setState({ sidebar: state.isOpen })
       if (state.isOpen) {
+         document.documentElement.style.overflow = "hidden"
          document.body.style.overflowY = "hidden"
+         document.body.style.position = 'fixed';
+         document.body.style.WebkitOverflowScrolling = 'touch';
+         document.body.style.width = '100%';
       } else {
+         document.documentElement.style.overflow = null
          document.body.style.overflowY = "scroll"
+         document.body.style.width = null;
+         document.body.style.WebkitOverflowScrolling = null;
+         document.body.style.position = null;
+         document.body.style.paddingRight = null;
       }
    }
 
@@ -122,10 +131,6 @@ export default class Navbar extends Component {
 const LogoFull = () => (
    <Image as={Link} to='/' src={LogoFullGradient} size='small' style={{ display: 'inherit' }} />
 )
-
-// const Logo = () => (
-//    <Image as={Link} to='/' src={LogoGradient} size='mini' style={{ display: 'inherit' }} />
-// )
 
 const LogoFullSmall = () => (
    <Image as={Link} to='/' src={LogoFullGradient} size='small' style={{ margin: 'auto' }} />
