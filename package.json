@@ -57,6 +57,7 @@
    },
    "dependencies": {
       "axios": "^0.18.0",
+      "core-js": "^2.5.5",
       "prop-types": "^15.6.0",
       "react": "^16.3.1",
       "react-adsense": "0.0.5",
